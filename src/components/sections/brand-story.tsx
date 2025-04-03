@@ -35,7 +35,7 @@ const BrandStory = () => {
             <div className="space-y-2 reveal fade-right">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Our Story</h2>
               <p className="text-muted-foreground md:text-xl">
-                The name "Wovera" is derived from the Amharic word "ወበራ" (webera), which refers to a community coming
+                The name &quot;Wovera&quot; is derived from the Amharic word &quot;ወበራ&quot;, which refers to a community coming
                 together to harvest.
               </p>
               <p className="text-muted-foreground md:text-xl">

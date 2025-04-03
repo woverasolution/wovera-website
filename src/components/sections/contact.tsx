@@ -40,7 +40,7 @@ const Contact = () => {
           <div className="space-y-2 reveal fade-bottom">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Get in Touch</h2>
             <p className="max-w-[700px] text-muted-foreground md:text-xl">
-              Have a project in mind or want to learn more about our products? We'd love to hear from you.
+              Have a project in mind or want to learn more about our products? We&apos;d love to hear from you.
             </p>
           </div>
         </div>
@@ -77,7 +77,7 @@ const Contact = () => {
           <Card className="reveal fade-left">
             <CardHeader>
               <CardTitle>Send us a Message</CardTitle>
-              <CardDescription>Fill out the form below and we'll get back to you</CardDescription>
+              <CardDescription>Fill out the form below and we&apos;ll get back to you</CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
               <div className="space-y-2">
@@ -103,5 +103,5 @@ const Contact = () => {
   )
 }
 
-export default Contact
+  export default Contact
 

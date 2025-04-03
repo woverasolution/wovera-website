@@ -7,6 +7,7 @@ alwaysApply: true
 - We are building a website for our new software engineering company called Wovera Solutions PLC. Wovera is what we call it often. 
 - This website wll be a landing page with a few pages to show our products, services and contact details. 
 - The website design should be modern, symmetrical and very interactive while performance and SEO is prioritized.
+- The design should be mobile first, responsivess is vital.
 - For SEO, adhere to best SEO practices in our stack NextJs with Typescript
 
 Tech considerations:

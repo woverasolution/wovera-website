@@ -5,9 +5,9 @@ import { Github, Linkedin, Mail, MapPin, Phone } from "lucide-react"
 const Footer = () => {
   return (
     <footer className="bg-muted py-12">
-      <div className="container grid gap-8 md:grid-cols-2 lg:grid-cols-4 px-4 md:px-6">
+      <div className="container grid gap-8 md:grid-cols-2 lg:grid-cols-4">
         <div className="space-y-4">
-          <Link href="/" className="flex items-center space-x-3">
+          <Link href="/" className="flex items-center space-x-2">
             <Image
               src="/wovera-logo.jpg"
               alt="Wovera Logo"
@@ -15,7 +15,7 @@ const Footer = () => {
               height={40}
               className="rounded-md"
             />
-            <span className="font-bold text-xl">Wovera</span>
+            
           </Link>
           <p className="text-muted-foreground max-w-xs">
             Building exceptional, scalable SaaS products and innovative tech solutions that just work.
@@ -95,7 +95,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="container mt-8 pt-8 border-t px-4 md:px-6">
+      <div className="container mt-8 pt-8 border-t">
         <p className="text-center text-muted-foreground text-sm">
           © {new Date().getFullYear()} Wovera. All rights reserved.
         </p>

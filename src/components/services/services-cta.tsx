@@ -36,10 +36,10 @@ const ServicesCTA = () => {
         <div className="mx-auto max-w-3xl bg-white/90 backdrop-blur-sm p-8 rounded-lg shadow-lg">
           <div className="flex flex-col items-center justify-center space-y-4 text-center reveal fade-bottom">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-              Let's build something amazing together
+              Let&apos;s build something amazing together
             </h2>
             <p className="max-w-[700px] text-muted-foreground md:text-xl">
-              Whether you need a custom solution, SaaS product, or strategic guidance, we're here to help you succeed.
+              Whether you need a custom solution, SaaS product, or strategic guidance, we&apos;re here to help you succeed.
             </p>
             <div className="flex flex-col gap-2 min-[400px]:flex-row">
               <Link href="/contact">
