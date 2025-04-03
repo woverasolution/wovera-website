@@ -82,7 +82,7 @@ const ProductDetails = () => {
               <div className="flex items-center justify-center reveal fade-left">
                 <div className="relative overflow-hidden rounded-lg border bg-background p-2">
                   <Image
-                    src="/placeholder.svg?height=600&width=800"
+                    src="/abal-home.png"
                     alt="Abal Dashboard"
                     width={600}
                     height={400}

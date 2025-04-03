@@ -14,7 +14,7 @@ const Hero = () => {
       revealElements.forEach((element) => {
         const windowHeight = window.innerHeight
         const elementTop = element.getBoundingClientRect().top
-        const elementVisible = 150
+        const elementVisible = 500
 
         if (elementTop < windowHeight - elementVisible) {
           element.classList.add("active")
@@ -23,62 +23,52 @@ const Hero = () => {
     }
 
     window.addEventListener("scroll", reveal)
-    // Initial check
     reveal()
-
-    return () => {
-      window.removeEventListener("scroll", reveal)
-    }
+    return () => window.removeEventListener("scroll", reveal)
   }, [])
 
   return (
-    <section className="relative w-full py-20 md:py-32 bg-gradient-to-b from-white to-primary/5 overflow-hidden">
-      <div className="container px-4 md:px-6">
-        <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 xl:grid-cols-2">
-          <div className="flex flex-col justify-center space-y-4">
-            <div className="space-y-2">
-              <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none reveal fade-bottom">
-                Tech that <span className="text-primary">just works</span>
+    <section className="relative w-full min-h-[90vh] flex items-center justify-center bg-gradient-to-b from-white to-primary/5 overflow-hidden py-20">
+      <div className="container px-4 md:px-6 relative z-10">
+        <div className="grid lg:grid-cols-2 gap-12 xl:gap-16 items-center">
+          <div className="flex flex-col justify-center space-y-8 text-center max-w-3xl mx-auto lg:text-left lg:mx-0">
+            <div className="space-y-6">
+              <h1 className="text-4xl font-bold tracking-tighter sm:text-6xl xl:text-7xl/none reveal fade-bottom flex flex-col items-center lg:items-start gap-4">
+                <span>WE MAKE PRODUCTS THAT</span>
+                <span className="text-primary">JUST WORK</span>
               </h1>
-              <p
-                className="max-w-[600px] text-muted-foreground md:text-xl reveal fade-bottom"
-                style={{ transitionDelay: "0.1s" }}
-              >
+              <p className="text-lg md:text-xl text-muted-foreground reveal fade-bottom max-w-2xl mx-auto lg:mx-0" style={{ transitionDelay: "0.1s" }}>
                 We build exceptional, scalable SaaS products and innovative tech solutions that empower businesses to
                 thrive in the digital age.
               </p>
             </div>
-            <div
-              className="flex flex-col gap-2 min-[400px]:flex-row reveal fade-bottom"
-              style={{ transitionDelay: "0.2s" }}
-            >
-              <Link href="/contact">
-                <Button size="lg" className="gap-1">
-                  Get in touch <ArrowRight className="h-4 w-4" />
+            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start reveal fade-bottom" style={{ transitionDelay: "0.2s" }}>
+              <Link href="/contact" className="w-full sm:w-auto">
+                <Button size="lg" className="w-full sm:w-auto text-lg px-8 h-12">
+                  Get in touch <ArrowRight className="h-5 w-5 ml-2" />
                 </Button>
               </Link>
-              <Link href="/products">
-                <Button size="lg" variant="outline">
+              <Link href="/products" className="w-full sm:w-auto">
+                <Button size="lg" variant="outline" className="w-full sm:w-auto text-lg px-8 h-12 border-2">
                   Explore our products
                 </Button>
               </Link>
             </div>
           </div>
-          <div className="flex items-center justify-center">
-            <div className="relative h-[350px] w-[350px] sm:h-[400px] sm:w-[400px] lg:h-[500px] lg:w-[500px] reveal fade-left">
-              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-primary/20 to-primary/0"></div>
+          <div className="flex items-center justify-center lg:justify-end relative">
+            <div className="relative h-[400px] w-[400px] sm:h-[500px] sm:w-[500px] lg:h-[600px] lg:w-[600px] reveal fade-left">
+              <div className="absolute inset-0 rounded-full bg-primary/10"></div>
               <Image
                 src="/wovera-logo.jpg"
                 alt="Wovera Logo"
-                width={300}
-                height={300}
-                className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform"
+                width={400}
+                height={400}
+                className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform scale-90"
               />
             </div>
           </div>
         </div>
       </div>
-      <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-background to-transparent"></div>
     </section>
   )
 }
