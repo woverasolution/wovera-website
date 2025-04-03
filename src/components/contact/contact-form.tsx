@@ -84,7 +84,7 @@ const ContactForm = () => {
           <Card className="reveal fade-left">
             <CardHeader>
               <CardTitle>Send us a Message</CardTitle>
-              <CardDescription>Fill out the form below and we'll get back to you</CardDescription>
+              <CardDescription>Fill out the form below and we&apos;ll get back to you</CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
               <RadioGroup defaultValue="general" className="flex flex-wrap gap-4 mb-4" onValueChange={setFormType}>

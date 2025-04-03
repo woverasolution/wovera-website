@@ -36,7 +36,7 @@ const ContactHero = () => {
               Get in <span className="text-primary">Touch</span>
             </h1>
             <p className="max-w-[700px] text-muted-foreground md:text-xl">
-              Have a project in mind or want to learn more about our products and services? We'd love to hear from you.
+              Have a project in mind or want to learn more about our products and services? We&apos;d love to hear from you.
             </p>
           </div>
         </div>

@@ -35,7 +35,7 @@ const ContactMap = () => {
           <div className="space-y-2 reveal fade-bottom">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">Visit Our Office</h2>
             <p className="max-w-[700px] text-muted-foreground md:text-xl">
-              We'd love to meet you in person at our headquarters in Addis Ababa.
+              We&apos;d love to meet you in person at our headquarters in Addis Ababa.
             </p>
           </div>
         </div>
