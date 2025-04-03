@@ -3,7 +3,15 @@
 import { useState, useEffect } from "react"
 import Link from "next/link"
 import Image from "next/image"
-import { Menu } from "lucide-react"
+import { 
+  Menu, 
+  Home, 
+  Package, 
+  Settings, 
+  Info, 
+  PhoneCall,
+  ChevronRight
+} from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import {
@@ -17,6 +25,7 @@ import {
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false)
+  const [isOpen, setIsOpen] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -33,6 +42,10 @@ const Navbar = () => {
     }
   }, [])
 
+  const handleNavItemClick = () => {
+    setIsOpen(false)
+  }
+
   return (
     <header
       className={`sticky top-0 z-50 w-full transition-all duration-300 ${
@@ -40,15 +53,16 @@ const Navbar = () => {
       }`}
     >
       <div className="container flex h-16 items-center justify-between">
-        <Link href="/" className="flex items-center space-x-2">
+        <Link href="/" className="flex items-center space-x-3 pl-1">
           <Image
-            src="/placeholder.svg"
+            src="/wovera-logo.jpg"
             alt="Wovera Logo"
-            width={40}
-            height={40}
+            width={48}
+            height={48}
             className="rounded-md"
+            priority
           />
-          <span className="font-bold text-xl">Wovera</span>
+          <span className="font-semibold text-xl tracking-tight">Wovera</span>
         </Link>
 
         {/* Desktop Navigation */}
@@ -201,30 +215,66 @@ const Navbar = () => {
         </div>
 
         {/* Mobile Navigation */}
-        <Sheet>
+        <Sheet open={isOpen} onOpenChange={setIsOpen}>
           <SheetTrigger asChild className="md:hidden">
             <Button variant="ghost" size="icon">
               <Menu className="h-6 w-6" />
               <span className="sr-only">Toggle menu</span>
             </Button>
           </SheetTrigger>
-          <SheetContent side="right">
-            <nav className="flex flex-col space-y-4 mt-8">
-              <Link href="/" className="text-lg font-medium transition-colors hover:text-primary">
-                Home
+          <SheetContent side="right" className="p-0 bg-gradient-to-br from-background to-secondary/20">
+            <nav className="flex flex-col space-y-1 mt-8">
+              <Link 
+                href="/" 
+                className="flex items-center gap-3 p-3 text-lg font-medium transition-all hover:bg-gradient-to-r hover:from-primary/20 hover:to-primary/10 group relative overflow-hidden"
+                onClick={handleNavItemClick}
+              >
+                <div className="absolute left-0 w-1 h-full bg-primary/40 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                <Home className="h-5 w-5 text-primary" />
+                <span>Home</span>
+                <ChevronRight className="ml-auto h-5 w-5 text-muted-foreground opacity-50 group-hover:opacity-100 transition-opacity group-hover:translate-x-1 duration-300" />
               </Link>
-              <Link href="/products" className="text-lg font-medium transition-colors hover:text-primary">
-                Products
+              <Link 
+                href="/products" 
+                className="flex items-center gap-3 p-3 text-lg font-medium transition-all hover:bg-gradient-to-r hover:from-primary/20 hover:to-primary/10 group relative overflow-hidden"
+                onClick={handleNavItemClick}
+              >
+                <div className="absolute left-0 w-1 h-full bg-primary/40 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                <Package className="h-5 w-5 text-primary" />
+                <span>Products</span>
+                <ChevronRight className="ml-auto h-5 w-5 text-muted-foreground opacity-50 group-hover:opacity-100 transition-opacity group-hover:translate-x-1 duration-300" />
               </Link>
-              <Link href="/services" className="text-lg font-medium transition-colors hover:text-primary">
-                Services
+              <Link 
+                href="/services" 
+                className="flex items-center gap-3 p-3 text-lg font-medium transition-all hover:bg-gradient-to-r hover:from-primary/20 hover:to-primary/10 group relative overflow-hidden"
+                onClick={handleNavItemClick}
+              >
+                <div className="absolute left-0 w-1 h-full bg-primary/40 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                <Settings className="h-5 w-5 text-primary" />
+                <span>Services</span>
+                <ChevronRight className="ml-auto h-5 w-5 text-muted-foreground opacity-50 group-hover:opacity-100 transition-opacity group-hover:translate-x-1 duration-300" />
               </Link>
-              <Link href="/about" className="text-lg font-medium transition-colors hover:text-primary">
-                About
+              <Link 
+                href="/about" 
+                className="flex items-center gap-3 p-3 text-lg font-medium transition-all hover:bg-gradient-to-r hover:from-primary/20 hover:to-primary/10 group relative overflow-hidden"
+                onClick={handleNavItemClick}
+              >
+                <div className="absolute left-0 w-1 h-full bg-primary/40 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                <Info className="h-5 w-5 text-primary" />
+                <span>About</span>
+                <ChevronRight className="ml-auto h-5 w-5 text-muted-foreground opacity-50 group-hover:opacity-100 transition-opacity group-hover:translate-x-1 duration-300" />
               </Link>
-              <Link href="/contact">
-                <Button className="w-full">Contact Us</Button>
-              </Link>
+              <div className="p-3">
+                <Link 
+                  href="/contact"
+                  onClick={handleNavItemClick}
+                >
+                  <Button className="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary">
+                    <PhoneCall className="h-4 w-4" />
+                    <span>Contact Us</span>
+                  </Button>
+                </Link>
+              </div>
             </nav>
           </SheetContent>
         </Sheet>

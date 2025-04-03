@@ -41,13 +41,15 @@ const Services = () => {
             </p>
           </div>
         </div>
-        <div className="mx-auto grid gap-8 py-12 sm:grid-cols-2 lg:grid-cols-4">
-          <div className="flex flex-col items-start space-y-4 reveal fade-bottom">
+
+        <div className="flex flex-wrap justify-center gap-8 py-12">
+          {/* Service Card 1 */}
+          <div className="flex flex-col items-start space-y-4 p-6 rounded-lg bg-card hover:bg-accent/5 transition-colors reveal fade-bottom flex-1 min-w-[280px] max-w-[400px]">
             <div className="flex h-16 w-16 items-center justify-center rounded-full bg-primary/10">
               <Code className="h-8 w-8 text-primary" />
             </div>
             <h3 className="text-xl font-bold">Custom Software Development</h3>
-            <p className="text-muted-foreground">
+            <p className="text-muted-foreground flex-grow">
               Tailored software solutions designed to address your specific business challenges and opportunities.
             </p>
             <Link href="/services#custom">
@@ -56,12 +58,14 @@ const Services = () => {
               </Button>
             </Link>
           </div>
-          <div className="flex flex-col items-start space-y-4 reveal fade-bottom" style={{ transitionDelay: "0.1s" }}>
+
+          {/* Service Card 2 */}
+          <div className="flex flex-col items-start space-y-4 p-6 rounded-lg bg-card hover:bg-accent/5 transition-colors reveal fade-bottom flex-1 min-w-[280px] max-w-[400px]" style={{ transitionDelay: "0.1s" }}>
             <div className="flex h-16 w-16 items-center justify-center rounded-full bg-primary/10">
               <Server className="h-8 w-8 text-primary" />
             </div>
             <h3 className="text-xl font-bold">B2B SaaS Development</h3>
-            <p className="text-muted-foreground">
+            <p className="text-muted-foreground flex-grow">
               End-to-end development of scalable, cloud-based software-as-a-service solutions for businesses.
             </p>
             <Link href="/services#saas">
@@ -70,12 +74,14 @@ const Services = () => {
               </Button>
             </Link>
           </div>
-          <div className="flex flex-col items-start space-y-4 reveal fade-bottom" style={{ transitionDelay: "0.2s" }}>
+
+          {/* Service Card 3 */}
+          <div className="flex flex-col items-start space-y-4 p-6 rounded-lg bg-card hover:bg-accent/5 transition-colors reveal fade-bottom flex-1 min-w-[280px] max-w-[400px]" style={{ transitionDelay: "0.2s" }}>
             <div className="flex h-16 w-16 items-center justify-center rounded-full bg-primary/10">
               <Bot className="h-8 w-8 text-primary" />
             </div>
             <h3 className="text-xl font-bold">AI Workflow Solutions</h3>
-            <p className="text-muted-foreground">
+            <p className="text-muted-foreground flex-grow">
               Customized AI workflows that study your business processes and help grow revenue with a lean model.
             </p>
             <Link href="/services#ai">
@@ -84,12 +90,14 @@ const Services = () => {
               </Button>
             </Link>
           </div>
-          <div className="flex flex-col items-start space-y-4 reveal fade-bottom" style={{ transitionDelay: "0.3s" }}>
+
+          {/* Service Card 4 */}
+          <div className="flex flex-col items-start space-y-4 p-6 rounded-lg bg-card hover:bg-accent/5 transition-colors reveal fade-bottom flex-1 min-w-[280px] max-w-[400px]" style={{ transitionDelay: "0.3s" }}>
             <div className="flex h-16 w-16 items-center justify-center rounded-full bg-primary/10">
               <Lightbulb className="h-8 w-8 text-primary" />
             </div>
             <h3 className="text-xl font-bold">Technology Consultancy</h3>
-            <p className="text-muted-foreground">
+            <p className="text-muted-foreground flex-grow">
               Strategic guidance to help you make informed technology decisions and investments.
             </p>
             <Link href="/services#consultancy">
@@ -99,6 +107,7 @@ const Services = () => {
             </Link>
           </div>
         </div>
+
         <div className="flex justify-center reveal fade-bottom">
           <Link href="/services">
             <Button size="lg" className="gap-1">

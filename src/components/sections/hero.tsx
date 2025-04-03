@@ -68,7 +68,7 @@ const Hero = () => {
             <div className="relative h-[350px] w-[350px] sm:h-[400px] sm:w-[400px] lg:h-[500px] lg:w-[500px] reveal fade-left">
               <div className="absolute inset-0 rounded-full bg-gradient-to-br from-primary/20 to-primary/0"></div>
               <Image
-                src="/placeholder.svg"
+                src="/wovera-logo.jpg"
                 alt="Wovera Logo"
                 width={300}
                 height={300}
