@@ -59,10 +59,10 @@ const Hero = () => {
             <div className="relative h-[400px] w-[400px] sm:h-[500px] sm:w-[500px] lg:h-[600px] lg:w-[600px] reveal fade-left">
               <div className="absolute inset-0 rounded-full bg-primary/10"></div>
               <Image
-                src="/wovera-logo.jpg"
-                alt="Wovera Logo"
-                width={400}
-                height={400}
+                src="/abal-home.png"
+                alt="Abal Mockup"
+                width={700}
+                height={700}
                 className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform scale-90"
               />
             </div>
