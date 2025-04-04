@@ -25,8 +25,10 @@ const companies = [
 
 export function CompanyLogos() {
   return (
-    <section className="py-24 bg-secondary/5">
-      <div className="container">
+    <section className="relative py-24 overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-br from-slate-50/80 via-slate-100/90 to-slate-50/80" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.1)_0%,rgba(255,255,255,0.4)_100%)]" />
+      <div className="container relative">
         <div className="space-y-8">
           <div className="space-y-2 text-center">
             <h2 className="text-2xl font-semibold tracking-tight">

@@ -1,6 +1,5 @@
-import ContactHero from "@/components/contact/contact-hero"
 import ContactForm from "@/components/contact/contact-form"
-import ContactMap from "@/components/contact/contact-map"
+import ContactHero from "@/components/contact/contact-hero"
 
 export const metadata = {
   title: "Contact | Wovera",
@@ -12,7 +11,7 @@ export default function ContactPage() {
     <main className="flex flex-col items-center justify-between">
       <ContactHero />
       <ContactForm />
-      <ContactMap />
+      
     </main>
   )
 }

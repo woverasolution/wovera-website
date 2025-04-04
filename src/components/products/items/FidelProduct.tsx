@@ -1,10 +1,10 @@
 "use client"
 
-import { useState } from "react"
-import Image from "next/image"
 import { Button } from "@/components/ui/button"
-import { GraduationCap, CheckCircle, ArrowRight, ChevronRight } from "lucide-react"
-import { motion, AnimatePresence } from "framer-motion"
+import { AnimatePresence, motion } from "framer-motion"
+import { ArrowRight, ChevronRight, GraduationCap } from "lucide-react"
+import Image from "next/image"
+import { useState } from "react"
 
 const features = [
   {
