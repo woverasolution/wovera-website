@@ -13,9 +13,11 @@ export default function ProductsPage() {
   return (
     <main className="flex flex-col items-center justify-between">
       <ProductHero />
-      <AbalProduct />
-      <FidelProduct />
-      <WoveraFundProduct />
+      <div className="w-full">
+        <AbalProduct />
+        <FidelProduct />
+        <WoveraFundProduct />
+      </div>
       <ProductCTA />
     </main>
   )
