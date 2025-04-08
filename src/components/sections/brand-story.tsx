@@ -29,10 +29,10 @@ const BrandStory = () => {
 
   return (
     <section id="about" className="w-full py-20 bg-muted/30">
-      <div className="container px-4 md:px-6">
-        <div className="grid gap-6 lg:grid-cols-2 lg:gap-12">
-          <div className="flex flex-col justify-center space-y-4">
-            <div className="space-y-2 reveal fade-right">
+      <div className="container px-6 md:px-10 lg:px-12 mx-auto max-w-6xl">
+        <div className="grid gap-8 lg:grid-cols-2 lg:gap-16">
+          <div className="flex flex-col justify-center space-y-6 pl-0 sm:pl-4 md:pl-6">
+            <div className="space-y-4 reveal fade-right">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Our Story</h2>
               <p className="text-muted-foreground md:text-xl">
                 The name &quot;Wovera&quot; is derived from the Amharic word &quot;ወበራ&quot;, which refers to a community coming
