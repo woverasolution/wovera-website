@@ -1,19 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
-import Link from "next/link"
-import Image from "next/image"
-import { 
-  Menu, 
-  Home, 
-  Package, 
-  Settings, 
-  Info, 
-  PhoneCall,
-  ChevronRight
-} from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -22,6 +9,19 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu"
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
+import {
+  ChevronRight,
+  Home,
+  Info,
+  Menu,
+  Package,
+  PhoneCall,
+  Settings
+} from "lucide-react"
+import Image from "next/image"
+import Link from "next/link"
+import { useEffect, useState } from "react"
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false)
