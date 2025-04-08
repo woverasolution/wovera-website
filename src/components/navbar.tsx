@@ -192,11 +192,7 @@ const Navbar = () => {
               </NavigationMenuContent>
             </NavigationMenuItem>
             <NavigationMenuItem>
-              <Link href="/about" legacyBehavior passHref>
-                <NavigationMenuLink className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50">
-                  About
-                </NavigationMenuLink>
-              </Link>
+              
             </NavigationMenuItem>
             <NavigationMenuItem>
               <Link href="/contact" legacyBehavior passHref>
@@ -254,16 +250,7 @@ const Navbar = () => {
                 <span>Services</span>
                 <ChevronRight className="ml-auto h-5 w-5 text-muted-foreground opacity-50 group-hover:opacity-100 transition-opacity group-hover:translate-x-1 duration-300" />
               </Link>
-              <Link 
-                href="/about" 
-                className="flex items-center gap-3 p-3 text-lg font-medium transition-all hover:bg-gradient-to-r hover:from-primary/20 hover:to-primary/10 group relative overflow-hidden"
-                onClick={handleNavItemClick}
-              >
-                <div className="absolute left-0 w-1 h-full bg-primary/40 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                <Info className="h-5 w-5 text-primary" />
-                <span>About</span>
-                <ChevronRight className="ml-auto h-5 w-5 text-muted-foreground opacity-50 group-hover:opacity-100 transition-opacity group-hover:translate-x-1 duration-300" />
-              </Link>
+              
               <div className="p-3">
                 <Link 
                   href="/contact"
