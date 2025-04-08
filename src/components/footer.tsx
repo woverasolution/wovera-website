@@ -11,7 +11,7 @@ const Footer = () => {
             <div className="space-y-6">
               <Link href="/" className="flex items-center space-x-2">
                 <Image
-                  src="/wovera-logo.jpg"
+                  src="/wovera-icon.svg"
                   alt="Wovera Logo"
                   width={40}
                   height={40}
@@ -42,11 +42,7 @@ const Footer = () => {
                     Services
                   </Link>
                 </li>
-                <li>
-                  <Link href="#about" className="text-muted-foreground hover:text-primary transition-colors">
-                    About
-                  </Link>
-                </li>
+                
                 <li>
                   <Link href="#contact" className="text-muted-foreground hover:text-primary transition-colors">
                     Contact

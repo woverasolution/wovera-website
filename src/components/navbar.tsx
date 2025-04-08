@@ -51,10 +51,10 @@ const Navbar = () => {
         isScrolled ? "bg-white/80 backdrop-blur-md shadow-sm" : "bg-transparent"
       }`}
     >
-      <div className="container flex h-16 items-center justify-between">
+      <div className="container flex h-16 items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link href="/" className="flex items-center space-x-3 pl-1">
           <Image
-            src="/wovera-logo.jpg"
+            src="/wovera-icon.svg"
             alt="Wovera Logo"
             width={48}
             height={48}
