@@ -30,7 +30,7 @@ const ProcessSection = () => {
 
   return (
     <section className="w-full py-20 bg-gradient-to-br from-primary/5 to-primary/10">
-      <div className="container px-4 md:px-6">
+      <div className="container mx-auto px-4 md:px-6">
         <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
           <div className="space-y-2 reveal fade-bottom">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Our Process</h2>
@@ -40,7 +40,7 @@ const ProcessSection = () => {
           </div>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4 max-w-7xl mx-auto">
           <Card className="reveal fade-bottom" style={{ transitionDelay: "0.1s" }}>
             <CardHeader>
               <div className="flex items-center justify-center h-12 w-12 rounded-full bg-primary text-white text-xl font-bold mb-4">

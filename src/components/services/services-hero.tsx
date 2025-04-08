@@ -32,8 +32,8 @@ const ServicesHero = () => {
 
   return (
     <section className="relative w-full py-20 md:py-32 bg-gradient-to-b from-white to-primary/5 overflow-hidden">
-      <div className="container px-4 md:px-6">
-        <div className="flex flex-col items-center justify-center space-y-4 text-center">
+      <div className="container mx-auto px-4 md:px-6">
+        <div className="flex flex-col items-center justify-center space-y-4 text-center max-w-4xl mx-auto">
           <div className="space-y-2 reveal fade-bottom">
             <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">
               Our <span className="text-primary">Services</span>

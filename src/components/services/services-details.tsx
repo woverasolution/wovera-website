@@ -33,8 +33,8 @@ const ServicesDetails = () => {
 
   return (
     <section id="services" className="w-full py-20">
-      <div className="container px-4 md:px-6">
-        <Tabs defaultValue="custom" className="w-full">
+      <div className="container mx-auto px-4 md:px-6">
+        <Tabs defaultValue="custom" className="w-full max-w-7xl mx-auto">
           <div className="flex justify-center mb-8 reveal fade-bottom">
             <TabsList className="grid w-full max-w-2xl grid-cols-4">
               <TabsTrigger value="custom">Custom Software</TabsTrigger>
