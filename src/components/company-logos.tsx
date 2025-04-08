@@ -48,7 +48,9 @@ export function CompanyLogos() {
             {companies.map((company, index) => (
               <div
                 key={index}
-                className="relative w-[200px] h-16 opacity-70 hover:opacity-100 transition-all duration-300 filter hover:brightness-110"
+                className={`relative w-[200px] h-16 opacity-70 hover:opacity-100 transition-all duration-300 filter hover:brightness-110 ${
+                  company.name === 'Ethio Dance Fitness' ? 'w-[400px] h-30' : ''
+                }`}
               >
                 <Image
                   src={company.logo}

@@ -34,7 +34,7 @@ const Services = () => {
     <section id="services" className="w-full py-24 relative overflow-hidden">
       <div className="absolute inset-0 opacity-30 bg-grid-pattern mix-blend-soft-light pointer-events-none" />
       
-      <div className="container px-4 md:px-6 relative z-10">
+      <div className="container px-4 md:px-6 relative z-10 mx-auto">
         <div className="flex flex-col items-center justify-center space-y-4 text-center mb-16">
           <div className="space-y-2 reveal fade-bottom">
             <div className="inline-block px-3 py-1 mb-4 text-sm font-medium rounded-full bg-primary/10 text-primary">
@@ -47,10 +47,10 @@ const Services = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 py-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 py-8 max-w-6xl mx-auto">
           {/* Service Card 1 - Top Left */}
           <div 
-            className="group flex flex-col items-start p-0 rounded-2xl overflow-hidden bg-white dark:bg-card transition-all duration-500 reveal fade-bottom min-h-[380px] transform hover:-translate-y-2 hover:rotate-1 relative md:translate-y-0"
+            className="group flex flex-col items-start p-0 rounded-2xl overflow-hidden bg-white dark:bg-card transition-all duration-500 reveal fade-bottom min-h-[380px] transform hover:-translate-y-2 hover:rotate-1 relative"
             style={{ zIndex: 1 }}
           >
             {/* Card gradient background for depth */}
@@ -89,7 +89,7 @@ const Services = () => {
 
           {/* Service Card 2 - Top Right */}
           <div 
-            className="group flex flex-col items-start p-0 rounded-2xl overflow-hidden bg-white dark:bg-card transition-all duration-500 reveal fade-bottom min-h-[380px] transform hover:-translate-y-2 hover:rotate-[-1deg] relative md:translate-y-8" 
+            className="group flex flex-col items-start p-0 rounded-2xl overflow-hidden bg-white dark:bg-card transition-all duration-500 reveal fade-bottom min-h-[380px] transform hover:-translate-y-2 hover:rotate-[-1deg] relative" 
             style={{ transitionDelay: "0.1s", zIndex: 2 }}
           >
             {/* Card gradient background for depth */}
@@ -128,7 +128,7 @@ const Services = () => {
 
           {/* Service Card 3 - Bottom Left */}
           <div 
-            className="group flex flex-col items-start p-0 rounded-2xl overflow-hidden bg-white dark:bg-card transition-all duration-500 reveal fade-bottom min-h-[380px] transform hover:-translate-y-2 hover:rotate-1 relative md:translate-y-[-8px]" 
+            className="group flex flex-col items-start p-0 rounded-2xl overflow-hidden bg-white dark:bg-card transition-all duration-500 reveal fade-bottom min-h-[380px] transform hover:-translate-y-2 hover:rotate-1 relative" 
             style={{ transitionDelay: "0.2s", zIndex: 3 }}
           >
             {/* Card gradient background for depth */}
@@ -167,7 +167,7 @@ const Services = () => {
 
           {/* Service Card 4 - Bottom Right */}
           <div 
-            className="group flex flex-col items-start p-0 rounded-2xl overflow-hidden bg-white dark:bg-card transition-all duration-500 reveal fade-bottom min-h-[380px] transform hover:-translate-y-2 hover:rotate-[-1deg] relative md:translate-y-0" 
+            className="group flex flex-col items-start p-0 rounded-2xl overflow-hidden bg-white dark:bg-card transition-all duration-500 reveal fade-bottom min-h-[380px] transform hover:-translate-y-2 hover:rotate-[-1deg] relative" 
             style={{ transitionDelay: "0.3s", zIndex: 4 }}
           >
             {/* Card gradient background for depth */}

@@ -36,7 +36,7 @@ const Products = () => {
       <div className="absolute top-0 left-0 right-0 h-40 bg-gradient-to-b from-background to-transparent" />
       <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-background to-transparent" />
       
-      <div className="container px-4 md:px-6 relative z-10">
+      <div className="container px-4 md:px-6 relative z-10 mx-auto">
         <div className="flex flex-col items-center justify-center space-y-4 text-center">
           <div className="space-y-2 reveal fade-bottom">
             <div className="inline-block px-3 py-1 mb-4 text-sm font-medium rounded-full bg-primary/10 text-primary">
