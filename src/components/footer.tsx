@@ -1,6 +1,6 @@
-import Link from "next/link"
+import { Facebook, Linkedin, Mail, MapPin, Phone, Send } from "lucide-react"
 import Image from "next/image"
-import { Github, Linkedin, Mail, MapPin, Phone } from "lucide-react"
+import Link from "next/link"
 
 const Footer = () => {
   return (
@@ -72,11 +72,11 @@ const Footer = () => {
               <ul className="space-y-3">
                 <li className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors">
                   <Mail size={16} />
-                  <span>contact@wovera.com</span>
+                  <span>info@woverasolutions.com</span>
                 </li>
                 <li className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors">
                   <Phone size={16} />
-                  <span>+251 (910) 428-013</span>
+                  <span>+251910428013</span>
                 </li>
                 <li className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors">
                   <MapPin size={16} />
@@ -84,11 +84,14 @@ const Footer = () => {
                 </li>
               </ul>
               <div className="flex space-x-4 mt-6">
-                <Link href="#" className="text-muted-foreground hover:text-primary transition-colors">
+                <Link href="https://www.linkedin.com/company/wovera-solutions" className="text-muted-foreground hover:text-primary transition-colors">
                   <Linkedin size={20} />
                 </Link>
-                <Link href="#" className="text-muted-foreground hover:text-primary transition-colors">
-                  <Github size={20} />
+                <Link href="https://www.facebook.com/woverasolutions" className="text-muted-foreground hover:text-primary transition-colors">
+                  <Facebook size={20} />
+                </Link>
+                <Link href="https://t.me.woverasolutions" className="text-muted-foreground hover:text-primary transition-colors">
+                  <Send size={20} />
                 </Link>
               </div>
             </div>
