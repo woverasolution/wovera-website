@@ -34,7 +34,7 @@ const Contact = () => {
   }, [])
 
   return (
-    <section id="contact" className="w-full py-20">
+    <section id="contact" className="w-full py-20 flex justify-center items-center">
       <div className="container px-4 md:px-6">
         <div className="flex flex-col items-center justify-center space-y-4 text-center">
           <div className="space-y-2 reveal fade-bottom">
