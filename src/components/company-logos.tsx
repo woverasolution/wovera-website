@@ -18,6 +18,10 @@ const companies = [
     name: 'INTAPS',
     logo: '/logos/intaps-logo.png',
   },
+  {
+    name: 'Dire Dawa Land Development and Management Bureau',
+    logo: '/logos/ddldmb-logo.jpeg',
+  },
   
   
   // Add more companies as needed

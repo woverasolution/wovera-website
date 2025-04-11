@@ -38,48 +38,48 @@ const ContactForm = () => {
   }, [])
 
   return (
-    <section className="w-full py-20 bg-slate-50/50">
-      <div className="container px-4 md:px-6 mx-auto">
+    <section className="relative w-full py-12 bg-gradient-to-b from-white to-slate-50/80 overflow-hidden">
+      {/* Geometric Decorative Elements */}
+      <div className="absolute top-0 left-0 w-40 h-40 bg-primary/5 rounded-full -translate-x-1/2 -translate-y-1/2"></div>
+      <div className="absolute top-20 right-10 w-64 h-64 bg-primary/10 rounded-full blur-2xl"></div>
+      <div className="absolute bottom-20 left-1/4 w-24 h-24 bg-secondary/10 rounded-lg rotate-45"></div>
+      <div className="absolute top-1/4 right-1/4 w-16 h-16 border-2 border-primary/20 rounded-lg rotate-12"></div>
+      <div className="absolute bottom-10 right-10 w-32 h-32 border-4 border-primary/10 rounded-full"></div>
+
+      <div className="container px-4 md:px-6 mx-auto relative z-10">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12 reveal fade-up">
-            <h2 className="text-3xl font-bold tracking-tight mb-4">Get in Touch</h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
-              Have questions or want to learn more about our services? We&apos;re here to help.
-            </p>
-          </div>
-          <div className="grid gap-8 lg:grid-cols-2">
-            <Card className="reveal fade-right">
+          
+          <div className="grid gap-8 lg:grid-cols-2 max-w-5xl mx-auto">
+            <Card className="reveal fade-right shadow-xl hover:shadow-2xl transition-all duration-300 border-0 bg-white/80 backdrop-blur-sm h-full">
               <CardHeader>
                 <CardTitle>Contact Information</CardTitle>
                 <CardDescription>Reach out to us through any of these channels</CardDescription>
               </CardHeader>
               <CardContent className="space-y-6">
-                <div className="flex items-start space-x-4">
+                <div className="flex items-start space-x-4 hover:bg-primary/5 p-3 rounded-lg transition-all">
                   <Mail className="mt-0.5 h-5 w-5 text-primary" />
                   <div>
                     <h3 className="font-medium">Email</h3>
-                    <p className="text-sm text-muted-foreground">info@wovera.com</p>
-                    <p className="text-sm text-muted-foreground">support@wovera.com</p>
+                    <p className="text-sm text-muted-foreground">info@woverasolutions.com</p>
                   </div>
                 </div>
-                <div className="flex items-start space-x-4">
+                <div className="flex items-start space-x-4 hover:bg-primary/5 p-3 rounded-lg transition-all">
                   <Phone className="mt-0.5 h-5 w-5 text-primary" />
                   <div>
                     <h3 className="font-medium">Phone</h3>
-                    <p className="text-sm text-muted-foreground">+1 (123) 456-7890</p>
-                    <p className="text-sm text-muted-foreground">+1 (123) 456-7891</p>
+                    <p className="text-sm text-muted-foreground">+251 910428013</p>
+                    <p className="text-sm text-muted-foreground">+251 911084409</p>
                   </div>
                 </div>
-                <div className="flex items-start space-x-4">
+                <div className="flex items-start space-x-4 hover:bg-primary/5 p-3 rounded-lg transition-all">
                   <MapPin className="mt-0.5 h-5 w-5 text-primary" />
                   <div>
                     <h3 className="font-medium">Office</h3>
-                    <p className="text-sm text-muted-foreground">123 Tech Street</p>
-                    <p className="text-sm text-muted-foreground">Addis Ababa, Ethiopia</p>
+                    <p className="text-sm text-muted-foreground">Wessen, Brix Building, 2nd floor, Addis Ababa, Ethiopia</p>
                   </div>
                 </div>
 
-                <div className="pt-6 border-t">
+                <div className="pt-6 border-t hover:bg-primary/5 p-3 rounded-lg transition-all mt-3">
                   <h3 className="font-medium mb-2">Office Hours</h3>
                   <p className="text-sm text-muted-foreground">Monday - Friday: 9:00 AM - 6:00 PM</p>
                   <p className="text-sm text-muted-foreground">Saturday: 10:00 AM - 2:00 PM</p>
@@ -88,7 +88,7 @@ const ContactForm = () => {
               </CardContent>
             </Card>
 
-            <Card className="reveal fade-left">
+            <Card className="reveal fade-left shadow-xl hover:shadow-2xl transition-all duration-300 border-0 bg-white/80 backdrop-blur-sm h-full">
               <CardHeader>
                 <CardTitle>Send us a Message</CardTitle>
                 <CardDescription>Fill out the form below and we&apos;ll get back to you</CardDescription>
@@ -131,7 +131,7 @@ const ContactForm = () => {
 
                 <div className="space-y-2">
                   <Label htmlFor="phone">Phone (Optional)</Label>
-                  <Input id="phone" type="tel" placeholder="+1 (123) 456-7890" />
+                  <Input id="phone" type="tel" placeholder="+251 912345678" />
                 </div>
 
                 {formType === "product" && (
@@ -173,7 +173,7 @@ const ContactForm = () => {
                 </div>
               </CardContent>
               <CardFooter>
-                <Button className="w-full">Send Message</Button>
+                <Button className="w-full bg-primary hover:bg-primary/90 text-white transition-all duration-300">Send Message</Button>
               </CardFooter>
             </Card>
           </div>

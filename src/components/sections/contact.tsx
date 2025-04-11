@@ -55,14 +55,14 @@ const Contact = () => {
                 <Mail className="mt-0.5 h-5 w-5 text-primary" />
                 <div>
                   <h3 className="font-medium">Email</h3>
-                  <p className="text-sm text-muted-foreground">info@wovera.com</p>
+                  <p className="text-sm text-muted-foreground">info@woverasolutions.com</p>
                 </div>
               </div>
               <div className="flex items-start space-x-4">
                 <Phone className="mt-0.5 h-5 w-5 text-primary" />
                 <div>
                   <h3 className="font-medium">Phone</h3>
-                  <p className="text-sm text-muted-foreground">+1 (123) 456-7890</p>
+                  <p className="text-sm text-muted-foreground">+251 910428013</p>
                 </div>
               </div>
               <div className="flex items-start space-x-4">
