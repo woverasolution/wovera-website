@@ -1,7 +1,8 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Coins, Dumbbell, GraduationCap } from "lucide-react";
+import { ArrowRight } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { useEffect } from "react";
 
@@ -30,19 +31,16 @@ const Products = () => {
   }, []);
 
   return (
-    <section
-      id="products"
-      className="w-full py-20  overflow-hidden bg-gray-100/20"
-    >
+    <section id="products" className="w-full py-20 bg-gray-100/20">
       {/* Background texture
       <div className="absolute inset-0 opacity-40 bg-grid-pattern mix-blend-soft-light pointer-events-none" />
       <div className="absolute top-0 left-0 right-0 h-40 bg-gradient-to-b from-background to-transparent" />
       <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-background to-transparent" /> */}
 
-      <div className="container px-4 md:px-6 relative z-10">
+      <div className="w-full max-w-[1440px] mx-auto px-4 md:px-6">
         <div className="flex flex-col items-center justify-center space-y-4 text-center">
           <div className="space-y-2 reveal fade-bottom">
-            <div className="inline-block px-3 py-1 mb-4 text-sm font-medium rounded-full bg-primary/10 text-primary">
+            <div className="inline-block py-1 px-4 mb-4 text-sm font-medium rounded-full bg-primary/10 text-primary">
               Our Products
             </div>
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
@@ -55,128 +53,128 @@ const Products = () => {
           </div>
         </div>
 
-        <div className="mx-auto max-w-6xl py-12 grid grid-cols-1 gap-6 md:grid-cols-3 lg:gap-8 relative">
+        <div className="mx-auto w-full max-w-6xl py-12 grid grid-cols-1 gap-8 md:grid-cols-3 lg:gap-12 place-items-center">
+          {/* Product 2: Fidel */}
+          <div
+            className="reveal fade-bottom w-full max-w-sm"
+            style={{ transitionDelay: "150ms" }}
+          >
+            <div className="overflow-hidden rounded-2xl h-full bg-gradient-to-br from-violet-50 to-violet-100/50 border-2 border-violet-200/50">
+              <div className="p-3 w-full">
+                <Image
+                  src="/images/fidel-card.png"
+                  alt="Fidel"
+                  width={250}
+                  height={200}
+                  className="w-full h-auto object-contain rounded-lg"
+                />
+              </div>
+              <div className="p-6 py-4">
+                <h3 className="text-2xl font-bold mb-2 text-violet-950">
+                  Fidel
+                </h3>
+                <div className="text-sm text-violet-600 mb-3 font-medium">
+                  School Management System
+                </div>
+                <p className="mb-6 text-sm md:text-base text-violet-900/80">
+                  An all-in-one platform for educational institutions to manage
+                  students, staff, curriculum, and communications.
+                </p>
+                <div className="pt-4">
+                  <Link href="/products#fidel" className="block">
+                    <Button
+                      variant="outline"
+                      className="w-full gap-2 border-2 border-violet-200 bg-white text-violet-700"
+                    >
+                      Learn more
+                      <ArrowRight className="h-4 w-4" />
+                    </Button>
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+
           {/* Product 1: Abal */}
           <div
-            className="reveal fade-bottom"
+            className="reveal fade-bottom w-full max-w-sm"
             style={{ transitionDelay: "0ms" }}
           >
-            <div className="group relative overflow-hidden rounded-sm h-full bg-gradient-to-br from-primary/5 via-primary/10 to-background border border-primary/10 backdrop-blur-sm hover:shadow-xl transition-all duration-500">
-              <div className="aspect-video relative overflow-hidden bg-primary/5">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-28 h-28 rounded-full bg-primary/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
-                    <Dumbbell className="h-12 w-12 text-primary" />
-                  </div>
-                </div>
-                <div className="absolute inset-0 bg-dot-pattern opacity-10" />
+            <div className="overflow-hidden rounded-2xl h-full bg-gradient-to-br from-emerald-50 to-emerald-100/50 border-2 border-emerald-200/50">
+              <div className="p-3 w-full">
+                <Image
+                  src="/images/abal-card.png"
+                  alt="Abal"
+                  width={250}
+                  height={200}
+                  className="w-full h-auto object-contain rounded-lg"
+                />
               </div>
-              <div className="p-6 flex flex-col flex-1">
-                <h3 className="text-2xl font-bold mb-2 group-hover:text-primary transition-colors">
+              <div className="p-6 py-4">
+                <h3 className="text-2xl font-bold mb-2 text-emerald-950">
                   Abal
                 </h3>
-                <div className="text-sm text-muted-foreground mb-3">
+                <div className="text-sm text-emerald-600 mb-3 font-medium">
                   Gym Management & Access Control
                 </div>
-                <p className="mb-6 text-sm md:text-base">
+                <p className="mb-6 text-sm md:text-base text-emerald-900/80">
                   A comprehensive solution for gym owners to manage memberships,
                   control access, and streamline operations with powerful
                   analytics.
                 </p>
-                <div className="mt-auto pt-4">
-                  <Link href="/products#abal">
+                <div className="pt-4">
+                  <Link href="/products#abal" className="block">
                     <Button
                       variant="outline"
-                      className="w-full gap-1 border-primary/20 hover:bg-primary hover:text-white transition-all"
+                      className="w-full gap-2 border-2 border-emerald-200 bg-white text-emerald-700"
                     >
-                      Learn more{" "}
-                      <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                      Learn more
+                      <ArrowRight className="h-4 w-4" />
                     </Button>
                   </Link>
                 </div>
               </div>
-              <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-primary/30 to-transparent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
-            </div>
-          </div>
-
-          {/* Product 2: Fidel */}
-          <div
-            className="reveal fade-bottom"
-            style={{ transitionDelay: "150ms" }}
-          >
-            <div className="group relative overflow-hidden rounded-sm h-full bg-gradient-to-br from-[#f0f4ff] to-[#e0e7ff] border border-[#c7d2fe]/30 hover:shadow-xl hover:shadow-[#818cf8]/10 transition-all duration-500">
-              <div className="aspect-video relative overflow-hidden bg-[#818cf8]/10">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-28 h-28 rounded-full bg-[#818cf8]/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
-                    <GraduationCap className="h-12 w-12 text-[#4f46e5]" />
-                  </div>
-                </div>
-                <div className="absolute inset-0 bg-dot-pattern opacity-10" />
-              </div>
-              <div className="p-6 flex flex-col flex-1">
-                <h3 className="text-2xl font-bold mb-2 group-hover:text-[#4f46e5] transition-colors">
-                  Fidel
-                </h3>
-                <div className="text-sm text-muted-foreground mb-3">
-                  School Management System
-                </div>
-                <p className="mb-6 text-sm md:text-base">
-                  An all-in-one platform for educational institutions to manage
-                  students, staff, curriculum, and communications.
-                </p>
-                <div className="mt-auto pt-4">
-                  <Link href="/products#fidel">
-                    <Button
-                      variant="outline"
-                      className="w-full gap-1 border-[#818cf8]/30 hover:bg-[#818cf8] hover:text-white transition-all"
-                    >
-                      Learn more{" "}
-                      <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                    </Button>
-                  </Link>
-                </div>
-              </div>
-              <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#4f46e5]/30 to-transparent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
             </div>
           </div>
 
           {/* Product 3: WoveraFund */}
           <div
-            className="reveal fade-bottom"
+            className="reveal fade-bottom w-full max-w-sm"
             style={{ transitionDelay: "300ms" }}
           >
-            <div className="group relative overflow-hidden rounded-sm h-full bg-gradient-to-br from-[#ffedd5] to-[#fed7aa] border border-[#fdba74]/30 hover:shadow-xl hover:shadow-[#f97316]/10 transition-all duration-500">
-              <div className="aspect-video relative overflow-hidden bg-[#f97316]/10">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-28 h-28 rounded-full bg-[#f97316]/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
-                    <Coins className="h-12 w-12 text-[#ea580c]" />
-                  </div>
-                </div>
-                <div className="absolute inset-0 bg-dot-pattern opacity-10" />
+            <div className="overflow-hidden rounded-2xl h-full bg-gradient-to-br from-orange-50 to-orange-100/50 border-2 border-orange-200/50">
+              <div className="p-3 w-full">
+                <Image
+                  src="/images/wovera-card.png"
+                  alt="WoveraFund"
+                  width={250}
+                  height={200}
+                  className="w-full h-auto object-contain rounded-lg"
+                />
               </div>
-              <div className="p-6 flex flex-col flex-1">
-                <h3 className="text-2xl font-bold mb-2 group-hover:text-[#ea580c] transition-colors">
+              <div className="p-6 py-4">
+                <h3 className="text-2xl font-bold mb-2 text-orange-950">
                   WoveraFund
                 </h3>
-                <div className="text-sm text-muted-foreground mb-3">
+                <div className="text-sm text-orange-600 mb-3 font-medium">
                   Crowdfunding Platform
                 </div>
-                <p className="mb-6 text-sm md:text-base">
+                <p className="mb-6 text-sm md:text-base text-orange-900/80">
                   A powerful crowdfunding solution that connects innovators with
                   backers to launch successful campaigns.
                 </p>
-                <div className="mt-auto pt-4">
-                  <Link href="/products#woverafund">
+                <div className="pt-4">
+                  <Link href="/products#woverafund" className="block">
                     <Button
                       variant="outline"
-                      className="w-full gap-1 border-[#fdba74]/30 hover:bg-[#f97316] hover:text-white transition-all"
+                      className="w-full gap-2 border-2 border-orange-200 bg-white text-orange-700"
                     >
-                      Learn more{" "}
-                      <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                      Learn more
+                      <ArrowRight className="h-4 w-4" />
                     </Button>
                   </Link>
                 </div>
               </div>
-              <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#ea580c]/30 to-transparent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
             </div>
           </div>
         </div>
@@ -185,11 +183,10 @@ const Products = () => {
           <Link href="/products">
             <Button
               size="lg"
-              className="gap-1 group relative overflow-hidden bg-primary hover:bg-primary/90"
+              className="gap-2 border-2 border-primary/20 bg-white text-primary hover:bg-white text-lg p-6 px-20"
             >
-              <span className="relative z-10">View all products</span>
-              <ArrowRight className="h-4 w-4 relative z-10 group-hover:translate-x-1 transition-transform" />
-              <div className="absolute inset-0 bg-gradient-to-r from-primary/80 via-primary to-primary/80 opacity-0 group-hover:opacity-100 transition-opacity" />
+              View all products
+              <ArrowRight className="h-4 w-4" />
             </Button>
           </Link>
         </div>

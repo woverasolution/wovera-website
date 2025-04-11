@@ -1,223 +1,99 @@
-"use client"
+"use client";
 
-import { useEffect } from "react"
-import { Button } from "@/components/ui/button"
-import Link from "next/link"
-import { Code, Server, Lightbulb, Bot, ArrowRight } from "lucide-react"
+import { Bot, Code, Lightbulb, Server } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
 
 const Services = () => {
-  useEffect(() => {
-    const revealElements = document.querySelectorAll(".reveal")
-
-    const reveal = () => {
-      revealElements.forEach((element) => {
-        const windowHeight = window.innerHeight
-        const elementTop = element.getBoundingClientRect().top
-        const elementVisible = 150
-
-        if (elementTop < windowHeight - elementVisible) {
-          element.classList.add("active")
-        }
-      })
-    }
-
-    window.addEventListener("scroll", reveal)
-    // Initial check
-    reveal()
-
-    return () => {
-      window.removeEventListener("scroll", reveal)
-    }
-  }, [])
-
   return (
-    <section id="services" className="w-full py-24 relative overflow-hidden">
-      <div className="absolute inset-0 opacity-30 bg-grid-pattern mix-blend-soft-light pointer-events-none" />
-      
-      <div className="container px-4 md:px-6 relative z-10">
-        <div className="flex flex-col items-center justify-center space-y-4 text-center mb-16">
-          <div className="space-y-2 reveal fade-bottom">
-            <div className="inline-block px-3 py-1 mb-4 text-sm font-medium rounded-full bg-primary/10 text-primary">
-              What We Do
+    <div className="w-full py-20 lg:py-20 relative overflow-hidden">
+      <div className="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] opacity-25 dark:opacity-[0.1]" />
+      <div className="container mx-auto relative">
+        <div className="flex flex-col items-center gap-10 max-w-5xl mx-auto">
+          <div className="flex gap-4 flex-col items-center text-center">
+            <div>
+              <Badge className="rounded-full bg-primary/10 text-primary px-4 py-1 text-sm">
+                Services
+              </Badge>
             </div>
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Our Services</h2>
-            <p className="max-w-[700px] text-muted-foreground md:text-xl">
-              We offer a range of services to help businesses leverage technology for growth and innovation.
-            </p>
-          </div>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 py-8 max-w-6xl mx-auto">
-          {/* Service Card 1 - Top Left */}
-          <div 
-            className="group flex flex-col items-start p-0 rounded-2xl overflow-hidden bg-white dark:bg-card transition-all duration-500 reveal fade-bottom min-h-[380px] transform hover:-translate-y-2 hover:rotate-1 relative md:translate-y-0"
-            style={{ zIndex: 1 }}
-          >
-            {/* Card gradient background for depth */}
-            <div className="absolute inset-0 bg-gradient-to-br from-white/40 dark:from-card/40 to-white dark:to-card rounded-2xl" />
-            
-            {/* Card border and shadow */}
-            <div className="absolute inset-0 rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.06)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.1)] group-hover:shadow-[0_15px_30px_rgb(0,0,0,0.07)] dark:group-hover:shadow-[0_15px_30px_rgb(0,0,0,0.15)] transition-all duration-500" />
-            
-            <div className="w-full h-40 bg-gradient-to-br from-primary/10 to-primary/5 relative overflow-hidden">
-              <div className="absolute inset-0 bg-dot-pattern opacity-20" />
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="flex h-24 w-24 items-center justify-center rounded-full bg-gradient-to-br from-white/90 to-white/70 dark:from-background/90 dark:to-background/70 backdrop-blur-sm transition-transform duration-500 group-hover:scale-110 shadow-md">
-                  <Code className="h-12 w-12 text-primary/80" />
-                </div>
-              </div>
-              <div className="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-white dark:from-card to-transparent" />
-            </div>
-            
-            <div className="p-8 flex flex-col flex-grow w-full relative z-10">
-              <h3 className="text-2xl font-bold mb-4 group-hover:text-primary transition-colors">Custom Software Development</h3>
-              <p className="text-muted-foreground flex-grow text-lg">
-                Tailored software solutions designed to address your specific business challenges and opportunities.
+            <div className="flex gap-2 flex-col items-center">
+              <h2 className="text-3xl md:text-5xl tracking-tighter font-regular">
+                What We Do
+              </h2>
+              <p className="text-lg max-w-xl lg:max-w-lg leading-relaxed tracking-tight text-muted-foreground">
+                We offer a range of services to help businesses leverage
+                technology for growth and innovation.
               </p>
-              <div className="mt-8 w-full">
-                <Link href="/services?service=custom" className="w-full block">
-                  <Button variant="outline" className="w-full gap-2 text-base py-6 border-primary/10 dark:border-primary/10 group-hover:bg-primary/90 group-hover:text-white transition-all duration-300 relative overflow-hidden">
-                    <span className="relative z-10">Learn more</span>
-                    <ArrowRight className="h-5 w-5 group-hover:translate-x-2 transition-transform duration-300 relative z-10" />
-                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 bg-gradient-to-r from-primary/80 to-primary/100 transition-opacity duration-300" />
-                  </Button>
-                </Link>
-              </div>
             </div>
-            <div className="absolute inset-0 border border-primary/5 dark:border-primary/10 rounded-2xl pointer-events-none group-hover:border-primary/20 transition-colors duration-300" />
           </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
+            {/* Custom Software Development */}
+            <div className="group bg-emerald-50 dark:bg-emerald-950/20 backdrop-blur-sm rounded-3xl h-auto lg:col-span-2 p-8 flex justify-between flex-col min-h-[280px] relative overflow-hidden border border-emerald-100/20">
+              <div className="absolute inset-0 bg-[radial-gradient(#10b981_1px,transparent_1px)] [background-size:16px_16px] opacity-0 group-hover:opacity-10 transition-opacity duration-500" />
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 bg-gradient-to-br from-emerald-500/5 via-transparent to-transparent transition-opacity duration-500" />
+              <Code className="w-10 h-10 stroke-[2.5] text-emerald-600 dark:text-emerald-500 relative z-10 transition-transform duration-500" />
+              <div className="flex flex-col gap-3 relative z-10">
+                <h3 className="text-xl font-medium tracking-tight text-emerald-900 dark:text-emerald-100 group-hover:text-emerald-700 dark:group-hover:text-emerald-400 transition-colors duration-300">
+                  Custom Software Development
+                </h3>
+                <p className="text-emerald-700/90 dark:text-emerald-300/90 text-sm">
+                  Tailored software solutions designed to address your specific
+                  business challenges and opportunities.
+                </p>
+              </div>
+            </div>
 
-          {/* Service Card 2 - Top Right */}
-          <div 
-            className="group flex flex-col items-start p-0 rounded-2xl overflow-hidden bg-white dark:bg-card transition-all duration-500 reveal fade-bottom min-h-[380px] transform hover:-translate-y-2 hover:rotate-[-1deg] relative md:translate-y-8" 
-            style={{ transitionDelay: "0.1s", zIndex: 2 }}
-          >
-            {/* Card gradient background for depth */}
-            <div className="absolute inset-0 bg-gradient-to-br from-white/40 dark:from-card/40 to-white dark:to-card rounded-2xl" />
-            
-            {/* Card border and shadow */}
-            <div className="absolute inset-0 rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.06)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.1)] group-hover:shadow-[0_15px_30px_rgb(0,0,0,0.07)] dark:group-hover:shadow-[0_15px_30px_rgb(0,0,0,0.15)] transition-all duration-500" />
-            
-            <div className="w-full h-40 bg-gradient-to-br from-primary/15 to-primary/5 relative overflow-hidden">
-              <div className="absolute inset-0 bg-dot-pattern opacity-20" />
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="flex h-24 w-24 items-center justify-center rounded-full bg-gradient-to-br from-white/90 to-white/70 dark:from-background/90 dark:to-background/70 backdrop-blur-sm transition-transform duration-500 group-hover:scale-110 shadow-md">
-                  <Server className="h-12 w-12 text-primary/70" />
-                </div>
-              </div>
-              <div className="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-white dark:from-card to-transparent" />
-            </div>
-            
-            <div className="p-8 flex flex-col flex-grow w-full relative z-10">
-              <h3 className="text-2xl font-bold mb-4 group-hover:text-primary transition-colors">B2B SaaS Development</h3>
-              <p className="text-muted-foreground flex-grow text-lg">
-                End-to-end development of scalable, cloud-based software-as-a-service solutions for businesses.
-              </p>
-              <div className="mt-8 w-full">
-                <Link href="/services?service=saas" className="w-full block">
-                  <Button variant="outline" className="w-full gap-2 text-base py-6 border-primary/10 dark:border-primary/10 group-hover:bg-primary/80 group-hover:text-white transition-all duration-300 relative overflow-hidden">
-                    <span className="relative z-10">Learn more</span>
-                    <ArrowRight className="h-5 w-5 group-hover:translate-x-2 transition-transform duration-300 relative z-10" />
-                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 bg-gradient-to-r from-primary/80 to-primary/100 transition-opacity duration-300" />
-                  </Button>
-                </Link>
+            {/* B2B SaaS Development */}
+            <div className="group bg-violet-50 dark:bg-violet-950/20 backdrop-blur-sm rounded-3xl h-auto p-8 flex justify-between flex-col min-h-[280px] relative overflow-hidden border border-violet-100/20">
+              <div className="absolute inset-0 bg-[radial-gradient(#8b5cf6_1px,transparent_1px)] [background-size:16px_16px] opacity-0 group-hover:opacity-10 transition-opacity duration-500" />
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 bg-gradient-to-br from-violet-500/5 via-transparent to-transparent transition-opacity duration-500" />
+              <Server className="w-10 h-10 stroke-[2.5] text-violet-600 dark:text-violet-500 relative z-10 transition-transform duration-500" />
+              <div className="flex flex-col gap-3 relative z-10">
+                <h3 className="text-xl font-medium tracking-tight text-violet-900 dark:text-violet-100 group-hover:text-violet-700 dark:group-hover:text-violet-400 transition-colors duration-300">
+                  B2B SaaS Development
+                </h3>
+                <p className="text-violet-700/90 dark:text-violet-300/90 text-sm">
+                  End-to-end development of scalable, cloud-based
+                  software-as-a-service solutions for businesses.
+                </p>
               </div>
             </div>
-            <div className="absolute inset-0 border border-primary/5 dark:border-primary/10 rounded-2xl pointer-events-none group-hover:border-primary/20 transition-colors duration-300" />
+
+            {/* AI Workflow Solutions */}
+            <div className="group bg-amber-50 dark:bg-amber-950/20 backdrop-blur-sm rounded-3xl h-auto p-8 flex justify-between flex-col min-h-[280px] relative overflow-hidden border border-amber-100/20">
+              <div className="absolute inset-0 bg-[radial-gradient(#f59e0b_1px,transparent_1px)] [background-size:16px_16px] opacity-0 group-hover:opacity-10 transition-opacity duration-500" />
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 bg-gradient-to-br from-amber-500/5 via-transparent to-transparent transition-opacity duration-500" />
+              <Bot className="w-10 h-10 stroke-[2.5] text-amber-600 dark:text-amber-500 relative z-10 transition-transform duration-500" />
+              <div className="flex flex-col gap-3 relative z-10">
+                <h3 className="text-xl font-medium tracking-tight text-amber-900 dark:text-amber-100 group-hover:text-amber-700 dark:group-hover:text-amber-400 transition-colors duration-300">
+                  AI Workflow Solutions
+                </h3>
+                <p className="text-amber-700/90 dark:text-amber-300/90 text-sm">
+                  Customized AI workflows that study your business processes and
+                  help grow revenue with a lean model.
+                </p>
+              </div>
+            </div>
+
+            {/* Technology Consultancy */}
+            <div className="group bg-sky-50 dark:bg-sky-950/20 backdrop-blur-sm rounded-3xl h-auto lg:col-span-2 p-8 flex justify-between flex-col min-h-[280px] relative overflow-hidden border border-sky-100/20">
+              <div className="absolute inset-0 bg-[radial-gradient(#0ea5e9_1px,transparent_1px)] [background-size:16px_16px] opacity-0 group-hover:opacity-10 transition-opacity duration-500" />
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 bg-gradient-to-br from-sky-500/5 via-transparent to-transparent transition-opacity duration-500" />
+              <Lightbulb className="w-10 h-10 stroke-[2.5] text-sky-600 dark:text-sky-500 relative z-10 transition-transform duration-500" />
+              <div className="flex flex-col gap-3 relative z-10">
+                <h3 className="text-xl font-medium tracking-tight text-sky-900 dark:text-sky-100 group-hover:text-sky-700 dark:group-hover:text-sky-400 transition-colors duration-300">
+                  Technology Consultancy
+                </h3>
+                <p className="text-sky-700/90 dark:text-sky-300/90 text-sm">
+                  Strategic guidance to help you make informed technology
+                  decisions and investments.
+                </p>
+              </div>
+            </div>
           </div>
-
-          {/* Service Card 3 - Bottom Left */}
-          <div 
-            className="group flex flex-col items-start p-0 rounded-2xl overflow-hidden bg-white dark:bg-card transition-all duration-500 reveal fade-bottom min-h-[380px] transform hover:-translate-y-2 hover:rotate-1 relative md:translate-y-[-8px]" 
-            style={{ transitionDelay: "0.2s", zIndex: 3 }}
-          >
-            {/* Card gradient background for depth */}
-            <div className="absolute inset-0 bg-gradient-to-br from-white/40 dark:from-card/40 to-white dark:to-card rounded-2xl" />
-            
-            {/* Card border and shadow */}
-            <div className="absolute inset-0 rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.06)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.1)] group-hover:shadow-[0_15px_30px_rgb(0,0,0,0.07)] dark:group-hover:shadow-[0_15px_30px_rgb(0,0,0,0.15)] transition-all duration-500" />
-            
-            <div className="w-full h-40 bg-gradient-to-br from-primary/20 to-primary/5 relative overflow-hidden">
-              <div className="absolute inset-0 bg-dot-pattern opacity-20" />
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="flex h-24 w-24 items-center justify-center rounded-full bg-gradient-to-br from-white/90 to-white/70 dark:from-background/90 dark:to-background/70 backdrop-blur-sm transition-transform duration-500 group-hover:scale-110 shadow-md">
-                  <Bot className="h-12 w-12 text-primary/75" />
-                </div>
-              </div>
-              <div className="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-white dark:from-card to-transparent" />
-            </div>
-            
-            <div className="p-8 flex flex-col flex-grow w-full relative z-10">
-              <h3 className="text-2xl font-bold mb-4 group-hover:text-primary transition-colors">AI Workflow Solutions</h3>
-              <p className="text-muted-foreground flex-grow text-lg">
-                Customized AI workflows that study your business processes and help grow revenue with a lean model.
-              </p>
-              <div className="mt-8 w-full">
-                <Link href="/services?service=ai" className="w-full block">
-                  <Button variant="outline" className="w-full gap-2 text-base py-6 border-primary/10 dark:border-primary/10 group-hover:bg-primary/85 group-hover:text-white transition-all duration-300 relative overflow-hidden">
-                    <span className="relative z-10">Learn more</span>
-                    <ArrowRight className="h-5 w-5 group-hover:translate-x-2 transition-transform duration-300 relative z-10" />
-                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 bg-gradient-to-r from-primary/80 to-primary/100 transition-opacity duration-300" />
-                  </Button>
-                </Link>
-              </div>
-            </div>
-            <div className="absolute inset-0 border border-primary/5 dark:border-primary/10 rounded-2xl pointer-events-none group-hover:border-primary/20 transition-colors duration-300" />
-          </div>
-
-          {/* Service Card 4 - Bottom Right */}
-          <div 
-            className="group flex flex-col items-start p-0 rounded-2xl overflow-hidden bg-white dark:bg-card transition-all duration-500 reveal fade-bottom min-h-[380px] transform hover:-translate-y-2 hover:rotate-[-1deg] relative md:translate-y-0" 
-            style={{ transitionDelay: "0.3s", zIndex: 4 }}
-          >
-            {/* Card gradient background for depth */}
-            <div className="absolute inset-0 bg-gradient-to-br from-white/40 dark:from-card/40 to-white dark:to-card rounded-2xl" />
-            
-            {/* Card border and shadow */}
-            <div className="absolute inset-0 rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.06)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.1)] group-hover:shadow-[0_15px_30px_rgb(0,0,0,0.07)] dark:group-hover:shadow-[0_15px_30px_rgb(0,0,0,0.15)] transition-all duration-500" />
-            
-            <div className="w-full h-40 bg-gradient-to-br from-primary/25 to-primary/5 relative overflow-hidden">
-              <div className="absolute inset-0 bg-dot-pattern opacity-20" />
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="flex h-24 w-24 items-center justify-center rounded-full bg-gradient-to-br from-white/90 to-white/70 dark:from-background/90 dark:to-background/70 backdrop-blur-sm transition-transform duration-500 group-hover:scale-110 shadow-md">
-                  <Lightbulb className="h-12 w-12 text-primary/80" />
-                </div>
-              </div>
-              <div className="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-white dark:from-card to-transparent" />
-            </div>
-            
-            <div className="p-8 flex flex-col flex-grow w-full relative z-10">
-              <h3 className="text-2xl font-bold mb-4 group-hover:text-primary transition-colors">Technology Consultancy</h3>
-              <p className="text-muted-foreground flex-grow text-lg">
-                Strategic guidance to help you make informed technology decisions and investments.
-              </p>
-              <div className="mt-8 w-full">
-                <Link href="/services?service=consultancy" className="w-full block">
-                  <Button variant="outline" className="w-full gap-2 text-base py-6 border-primary/10 dark:border-primary/10 group-hover:bg-primary/95 group-hover:text-white transition-all duration-300 relative overflow-hidden">
-                    <span className="relative z-10">Learn more</span>
-                    <ArrowRight className="h-5 w-5 group-hover:translate-x-2 transition-transform duration-300 relative z-10" />
-                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 bg-gradient-to-r from-primary/80 to-primary/100 transition-opacity duration-300" />
-                  </Button>
-                </Link>
-              </div>
-            </div>
-            <div className="absolute inset-0 border border-primary/5 dark:border-primary/10 rounded-2xl pointer-events-none group-hover:border-primary/20 transition-colors duration-300" />
-          </div>
-        </div>
-
-        <div className="flex justify-center mt-16 reveal fade-bottom">
-          <Link href="/services">
-            <Button size="lg" className="gap-2 group relative overflow-hidden hover:shadow-lg transition-all duration-300 text-lg py-6 px-8">
-              <span className="relative z-10">View all services</span>
-              <ArrowRight className="h-5 w-5 group-hover:translate-x-2 transition-transform duration-300 relative z-10" />
-              <div className="absolute inset-0 bg-gradient-to-r from-primary/80 via-primary/90 to-primary/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            </Button>
-          </Link>
         </div>
       </div>
-    </section>
-  )
-}
+    </div>
+  );
+};
 
-export default Services
-
+export default Services;

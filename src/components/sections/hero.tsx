@@ -2,20 +2,17 @@
 
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
-import { Cherry_Swash, Yellowtail } from "next/font/google";
+import { Yellowtail } from "next/font/google";
+import Image from "next/image";
 import Link from "next/link";
 import { useEffect } from "react";
-import Image from "next/image";
 
 const dawningNewDay = Yellowtail({
   subsets: ["latin"],
   weight: ["400"],
 });
 
-const cherrySwash = Cherry_Swash({
-  subsets: ["latin"],
-  weight: ["400"],
-});
+
 
 const Hero = () => {
   useEffect(() => {
