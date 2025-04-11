@@ -1,6 +1,5 @@
 import Hero from "@/components/sections/hero"
 import Products from "@/components/sections/products"
-import Services from "@/components/sections/services"
 import BrandStory from "@/components/sections/brand-story"
 import Contact from "@/components/sections/contact"
 import { CompanyLogos } from "@/components/company-logos"
@@ -11,7 +10,6 @@ export default function Home() {
       <Hero />
       
       <Products />
-      <Services />
       <BrandStory />
       <CompanyLogos />
       <Contact />

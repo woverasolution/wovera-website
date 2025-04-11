@@ -38,12 +38,6 @@ const Footer = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link href="#services" className="text-muted-foreground hover:text-primary transition-colors">
-                    Services
-                  </Link>
-                </li>
-                
-                <li>
                   <Link href="#contact" className="text-muted-foreground hover:text-primary transition-colors">
                     Contact
                   </Link>
@@ -55,12 +49,12 @@ const Footer = () => {
               <h3 className="font-semibold text-lg mb-6">Products</h3>
               <ul className="space-y-3">
                 <li>
-                  <Link href="#abal" className="text-muted-foreground hover:text-primary transition-colors">
+                  <Link href="https://www.abal.et" className="text-muted-foreground hover:text-primary transition-colors">
                     Abal
                   </Link>
                 </li>
                 <li>
-                  <Link href="#fidel" className="text-muted-foreground hover:text-primary transition-colors">
+                  <Link href="https://www.fidel.et" className="text-muted-foreground hover:text-primary transition-colors">
                     Fidel
                   </Link>
                 </li>
