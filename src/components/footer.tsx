@@ -49,12 +49,12 @@ const Footer = () => {
               <h3 className="font-semibold text-lg mb-6">Products</h3>
               <ul className="space-y-3">
                 <li>
-                  <Link href="https://www.abal.et" className="text-muted-foreground hover:text-primary transition-colors">
+                  <Link href="https://www.abal.et" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
                     Abal
                   </Link>
                 </li>
                 <li>
-                  <Link href="https://www.fidel.et" className="text-muted-foreground hover:text-primary transition-colors">
+                  <Link href="https://www.fidel.et" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
                     Fidel
                   </Link>
                 </li>
@@ -93,7 +93,7 @@ const Footer = () => {
           
           <div className="mt-12 pt-8 border-t border-muted-foreground/20">
             <p className="text-center text-muted-foreground text-sm">
-              © {new Date().getFullYear()} Wovera. All rights reserved.
+              © {new Date().getFullYear()} Wovera Solutions PLC. All rights reserved.
             </p>
           </div>
         </div>
