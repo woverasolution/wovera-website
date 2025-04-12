@@ -1,11 +1,9 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { ArrowRight, BadgeCheck } from "lucide-react";
+import { BadgeCheck } from "lucide-react";
 import Image from "next/image";
 import { useEffect } from "react";
-import { WaveSeparator } from "@/components/ui/wave-separator";
 const services = [
   {
     iconSrc: "/images/code.png",
@@ -18,9 +16,10 @@ const services = [
       { text: "Integration Solutions" },
       { text: "Legacy System Modernization" },
     ],
-    imageSrc: "/placeholder.svg?height=600&width=800",
+    imageSrc: "/images/code-service.png",
     imageAlt: "Custom Software Development",
-    color: "emerald",
+    colorName: "emerald",
+    colorHex: "#10b981",
     bgClass: "bg-emerald-50 dark:bg-emerald-950/20",
     borderClass: "border-emerald-100/20",
     hoverTextClass:
@@ -38,9 +37,10 @@ const services = [
       { text: "API Development & Integration" },
       { text: "Scalable Cloud Infrastructure" },
     ],
-    imageSrc: "/placeholder.svg?height=600&width=800",
+    imageSrc: "/images/saas-service.png",
     imageAlt: "B2B SaaS Development",
-    color: "violet",
+    colorName: "violet",
+    colorHex: "#8b5cf6",
     bgClass: "bg-violet-50 dark:bg-violet-950/20",
     borderClass: "border-violet-100/20",
     hoverTextClass:
@@ -58,9 +58,10 @@ const services = [
       { text: "Workflow Automation" },
       { text: "Data-Driven Revenue Growth" },
     ],
-    imageSrc: "/placeholder.svg?height=600&width=800",
+    imageSrc: "/images/ai-service.png",
     imageAlt: "AI Workflow Solutions",
-    color: "amber",
+    colorName: "amber",
+    colorHex: "#f59e0b",
     bgClass: "bg-amber-50 dark:bg-amber-950/20",
     borderClass: "border-amber-100/20",
     hoverTextClass:
@@ -78,9 +79,10 @@ const services = [
       { text: "Process Optimization" },
       { text: "IT Strategy Development" },
     ],
-    imageSrc: "/placeholder.svg?height=600&width=800",
+    imageSrc: "/images/consultancy-service.png",
     imageAlt: "Technology Consultancy",
-    color: "sky",
+    colorName: "sky",
+    colorHex: "#0ea5e9",
     bgClass: "bg-sky-50 dark:bg-sky-950/20",
     borderClass: "border-sky-100/20",
     hoverTextClass: "group-hover:text-sky-700 dark:group-hover:text-sky-400",
@@ -112,15 +114,17 @@ const ServicesDetails = () => {
   return (
     <section id="services" className="w-full py-20 max-w-7xl mx-auto">
       <div className="container px-4 md:px-6">
-        <div className="space-y-32">
+        <div className="space-y-25">
           {services.map((service, index) => (
             <div
               key={service.title}
-              className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center"
+              className="grid gap-4 lg:grid-cols-2 lg:gap-1 items-center"
             >
               <div
                 className={`flex flex-col justify-center space-y-4 reveal ${
-                  index % 2 === 0 ? "fade-right" : "fade-left"
+                  index % 2 === 0
+                    ? "fade-right lg:order-first"
+                    : "fade-left lg:order-last"
                 }`}
               >
                 <div className="flex items-start gap-4">
@@ -147,53 +151,71 @@ const ServicesDetails = () => {
                     </p>
                   </div>
                 </div>
-
-                <div className="space-y-2">
+                <div className="relative pt-4">
+                  {/* Vertical Line */}
+                  <div
+                    className="absolute left-2.5 top-0 bottom-0 w-px"
+                    style={{ backgroundColor: service.colorHex }}
+                  />
+                  {/* Feature Items */}
                   {service.features.map((feature, idx) => (
-                    <div key={idx} className="flex items-center gap-2">
-                      <BadgeCheck
-                        className={cn("w-4 h-4", service.textClass)}
+                    <div key={idx} className="relative pl-13 mb-4">
+                      {/* Horizontal Line */}
+                      <div
+                        className="absolute -top-2 left-0 w-[80%] h-px opacity-50"
+                        style={{ backgroundColor: service.colorHex }}
                       />
-                      <span className="text-muted-foreground">
-                        {feature.text}
-                      </span>
+
+                      {/* Checkmark & Text */}
+                      <div className="flex items-center gap-2 relative">
+                        <BadgeCheck
+                          className={cn(
+                            "w-5 h-5 absolute -left-6",
+                            service.textClass
+                          )}
+                          style={{ color: service.colorHex }}
+                        />
+                        <span className="text-muted-foreground">
+                          {feature.text}
+                        </span>
+                      </div>
+                      {idx === service.features.length - 1 && (
+                        <div
+                          className="absolute -bottom-2 left-0 w-[80%] h-px opacity-50"
+                          style={{ backgroundColor: service.colorHex }}
+                        />
+                      )}
                     </div>
                   ))}
                 </div>
-                <div>
+
+                {/* <div>
                   <Button className="gap-2">
                     Discuss your project <ArrowRight className="w-4 h-4" />
                   </Button>
-                </div>
+                </div> */}
               </div>
               <div
                 className={`flex items-center justify-center reveal ${
-                  index % 2 === 0 ? "fade-left" : "fade-right"
+                  index % 2 === 0
+                    ? "fade-left lg:order-last"
+                    : "fade-right lg:order-first"
                 }`}
               >
                 <div
                   className={cn(
-                    "relative w-full overflow-hidden rounded-md border p-2",
+                    " w-full overflow-hidden rounded-md border p-2",
                     service.borderClass
                   )}
                 >
                   <Image
                     src={service.imageSrc}
                     alt={service.imageAlt}
-                    width={600}
+                    width={450}
                     height={400}
                     className="rounded-md object-cover"
                   />
-                  <div
-                    className={cn(
-                      "absolute inset-0 bg-gradient-to-tr from-primary/20 via-transparent to-transparent opacity-60",
-                      service.bgClass
-                    )}
-                  />
                 </div>
-              </div>
-              <div className="w-full mx-auto">
-                <WaveSeparator color={service.color} />
               </div>
             </div>
           ))}
