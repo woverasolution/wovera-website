@@ -4,8 +4,10 @@ import { cn } from "@/lib/utils";
 import { BadgeCheck } from "lucide-react";
 import Image from "next/image";
 import { useEffect } from "react";
+
 const services = [
   {
+    id: "custom-software",
     iconSrc: "/images/code.png",
     title: "Custom Software Development",
     description:
@@ -27,6 +29,7 @@ const services = [
     textClass: "text-emerald-900 dark:text-emerald-100",
   },
   {
+    id: "saas-development",
     iconSrc: "/images/saas.png",
     title: "B2B SaaS Development",
     description:
@@ -48,6 +51,7 @@ const services = [
     textClass: "text-violet-900 dark:text-violet-100",
   },
   {
+    id: "ai-workflow",
     iconSrc: "/images/ai-workflow.png",
     title: "AI Workflow Solutions",
     description:
@@ -69,6 +73,7 @@ const services = [
     textClass: "text-amber-900 dark:text-amber-100",
   },
   {
+    id: "tech-consultancy",
     iconSrc: "/images/consultancy.png",
     title: "Technology Consultancy",
     description:
@@ -108,17 +113,42 @@ const ServicesDetails = () => {
 
     window.addEventListener("scroll", reveal);
     reveal();
-    return () => window.removeEventListener("scroll", reveal);
+
+    // Scroll to the section if hash is present in the URL
+    const handleHashChange = () => {
+      const { hash } = window.location;
+      if (hash) {
+        const id = hash.substring(1);
+        const element = document.getElementById(id);
+        if (element) {
+          setTimeout(() => {
+            window.scrollTo({
+              top: element.offsetTop - 100,
+              behavior: "smooth",
+            });
+          }, 100);
+        }
+      }
+    };
+
+    handleHashChange();
+    window.addEventListener("hashchange", handleHashChange);
+
+    return () => {
+      window.removeEventListener("scroll", reveal);
+      window.removeEventListener("hashchange", handleHashChange);
+    };
   }, []);
 
   return (
     <section id="services" className="w-full py-20 max-w-7xl mx-auto">
       <div className="container px-4 md:px-6">
-        <div className="space-y-10">
+        <div className="space-y-20">
           {services.map((service, index) => (
             <div
+              id={service.id}
               key={service.title}
-              className="grid gap-4 lg:grid-cols-2 lg:gap-1 items-center border-b pb-15"
+              className="grid gap-4 lg:grid-cols-2 lg:gap-1 items-center border-b pb-15 scroll-mt-24"
             >
               <div
                 className={`flex flex-col justify-center space-y-4 reveal ${
@@ -130,7 +160,7 @@ const ServicesDetails = () => {
                 <div className="flex items-start gap-4">
                   <div
                     className={cn(
-                      "flex  items-center justify-center rounded-md bg-primary/10 rounded-xl",
+                      "flex items-center justify-center rounded-md bg-primary/10 rounded-xl",
                       service.bgClass
                     )}
                   >
@@ -188,12 +218,6 @@ const ServicesDetails = () => {
                     </div>
                   ))}
                 </div>
-
-                {/* <div>
-                  <Button className="gap-2">
-                    Discuss your project <ArrowRight className="w-4 h-4" />
-                  </Button>
-                </div> */}
               </div>
               <div
                 className={`flex items-center justify-center reveal ${
@@ -204,7 +228,7 @@ const ServicesDetails = () => {
               >
                 <div
                   className={cn(
-                    " w-full overflow-hidden rounded-md border p-2",
+                    "w-full overflow-hidden rounded-md border p-2",
                     service.borderClass
                   )}
                 >

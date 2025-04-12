@@ -222,7 +222,7 @@ const ProcessSection = () => {
               </Card>
 
               {index < 3 && (
-                <div className="absolute top-1/2 -right-11 hidden lg:flex items-center justify-center transform -translate-y-1/2 z-10">
+                <div className="absolute top-1/2 -right-11 hidden lg:flex items-center justify-center transform -translate-y-1/2 z-10 opacity-100 transition-opacity duration-300 group-hover:opacity-0">
                   <motion.div variants={arrowVariants} custom={index}>
                     <Image
                       src="/images/arrow.png"
