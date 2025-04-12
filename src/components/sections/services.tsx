@@ -8,7 +8,7 @@ const Services = () => {
     "group backdrop-blur-sm rounded-xs h-auto p-8 flex justify-between flex-col min-h-[280px] relative overflow-hidden";
 
   return (
-    <div className="w-full py-20 lg:py-20 relative overflow-hidden">
+    <div className="w-full py-20 lg:py-20 px-4 relative overflow-hidden">
       <div className="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] opacity-25 dark:opacity-[0.1]" />
       <div className="container mx-auto relative">
         <div className="flex flex-col items-center gap-10 max-w-5xl mx-auto">

@@ -1,7 +1,13 @@
 "use client";
 
+import { Yellowtail } from "next/font/google";
 import Image from "next/image";
 import { useEffect } from "react";
+
+const dawningNewDay = Yellowtail({
+  subsets: ["latin"],
+  weight: ["400"],
+});
 
 const BrandStory = () => {
   useEffect(() => {
@@ -29,26 +35,31 @@ const BrandStory = () => {
   }, []);
 
   return (
-    <section id="about" className="w-full py-20 bg-green-50/80">
+    <section
+      id="about"
+      className="w-full py-20 bg-gradient-to-br from-green-50/70 via-yellow-50/20 to-green-100/60"
+    >
       <div className="container px-6 md:px-10 lg:px-12 mx-auto max-w-6xl">
         <div className="grid gap-8 lg:grid-cols-2 lg:gap-16">
           <div className="flex flex-col justify-center space-y-6 pl-0 sm:pl-4 md:pl-6">
             <div className="space-y-4 reveal fade-right">
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-primary">
+              <h2
+                className={`text-4xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-primary ${dawningNewDay.className}`}
+              >
                 Our Story
               </h2>
-              <p className="text-muted-foreground md:text-xl">
+              <p className="text-muted-foreground md:text-lg">
                 The name &quot;Wovera&quot; is derived from the Amharic word
                 &quot;ወበራ&quot;, which refers to a community coming together to
                 harvest.
               </p>
-              <p className="text-muted-foreground md:text-xl">
+              <p className="text-muted-foreground md:text-lg">
                 This concept of collaboration and collective effort is at the
                 heart of our approach to building technology. We believe that
                 the best solutions emerge when talented people work together
                 with a shared purpose.
               </p>
-              <p className="text-muted-foreground md:text-xl">
+              <p className="text-muted-foreground md:text-lg">
                 Just as a community harvest brings abundance, our collaborative
                 approach to technology creates solutions that are robust,
                 scalable, and truly valuable to those who use them.

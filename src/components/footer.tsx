@@ -76,11 +76,11 @@ const Footer = () => {
               <ul className="space-y-3">
                 <li className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors">
                   <Mail size={16} />
-                  <span>contact@wovera.com</span>
+                  <span>info@woverasolutions.com</span>
                 </li>
                 <li className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors">
                   <Phone size={16} />
-                  <span>+251 (910) 428-013</span>
+                  <span>+251 910 42 80 13</span>
                 </li>
                 <li className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors">
                   <MapPin size={16} />
@@ -88,10 +88,10 @@ const Footer = () => {
                 </li>
               </ul>
               <div className="flex space-x-4 mt-6">
-                <Link href="#" className="text-muted-foreground hover:text-primary transition-colors">
+                <Link href="https://www.linkedin.com/company/woverasolutions" className="text-muted-foreground hover:text-primary transition-colors">
                   <Linkedin size={20} />
                 </Link>
-                <Link href="#" className="text-muted-foreground hover:text-primary transition-colors">
+                <Link href="https://github.com/wovera" className="text-muted-foreground hover:text-primary transition-colors">
                   <Github size={20} />
                 </Link>
               </div>

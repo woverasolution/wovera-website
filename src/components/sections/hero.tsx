@@ -1,6 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
+import { useIsMobile } from "@/hooks/use-is-mobile";
 import { ArrowRight } from "lucide-react";
 import { Yellowtail } from "next/font/google";
 import Image from "next/image";
@@ -13,6 +14,7 @@ const dawningNewDay = Yellowtail({
 });
 
 const Hero = () => {
+  const isMobile = useIsMobile();
   useEffect(() => {
     const revealElements = document.querySelectorAll(".reveal");
 
@@ -34,7 +36,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="relative w-full -mt-18 min-h-[100vh] flex items-center justify-center overflow-hidden ">
+    <section className="relative w-full -mt-18 min-h-[100vh] flex items-center justify-center overflow-hidden">
       {/* Base gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-[#e6f7ee] via-[#e8faf0] to-white"></div>
       {/* Radial gradient highlight near navbar */}
@@ -46,43 +48,43 @@ const Hero = () => {
 
       {/* Hero Image */}
       <div
-        className="absolute left-0 right-0 bottom-0 w-full overflow-hidden"
+        className="absolute left-0 right-0 bottom-0 w-full h-[55vh] md:h-auto overflow-hidden"
         aria-hidden="true"
       >
-        <div className="relative w-full max-w-[2050px] mx-auto ">
+        <div className="relative w-full h-full md:max-w-[2050px] md:mx-auto">
           <Image
             src="/images/hero-image.png"
             alt="Hero illustration"
             width={2050}
             height={1000}
             priority
-            className="w-full h-auto object-contain object-bottom -mb-20"
+            className="w-auto h-full md:w-full md:h-auto object-contain object-bottom scale-330 md:scale-100 -mt-145 ml-80 md:ml-0 md:mt-40"
           />
         </div>
       </div>
 
       <div className="container px-4 md:px-6 relative z-10">
-        <div className="flex flex-col items-center justify-center -mt-65">
-          <div className="flex flex-col justify-center space-y-8 text-center max-w-3xl">
-            <div className="space-y-4">
+        <div className="flex flex-col items-center justify-center -mt-55 md:-mt-30">
+          <div className="flex flex-col justify-center space-y-6 md:space-y-8 text-center max-w-3xl">
+            <div className="space-y-3 md:space-y-4 md:-mt-40">
               <div className="relative">
-                <h1 className="text-5xl font-bold tracking-tighter sm:text-6xl xl:text-7xl/none reveal fade-bottom flex flex-col items-center gap-4">
+                <h1 className="text-6xl md:text-4xl font-bold tracking-tighter sm:text-6xl xl:text-7xl/none reveal fade-bottom flex flex-col items-center gap-2 md:gap-4">
                   <span className={""}>We make products that</span>
                   <span
-                    className={`${dawningNewDay.className} text-primary text-6xl sm:text-7xl xl:text-8xl -mt-7 `}
+                    className={`${dawningNewDay.className} text-primary text-6xl sm:text-7xl xl:text-8xl -mt-1 md:-mt-4`}
                   >
                     Just Work
                   </span>
                 </h1>
                 <div
-                  className="reveal fade-bottom"
+                  className="reveal fade-bottom -mt-1"
                   style={{ transitionDelay: "0.5s" }}
                 >
-                  <LineSvg width={280} />
+                  <LineSvg width={isMobile ? 180 : 280} />
                 </div>
               </div>
               <p
-                className="text-muted-foreground reveal fade-bottom max-w-2xl mx-auto"
+                className="text-muted-foreground reveal fade-bottom max-w-2xl mx-auto text-sm md:text-base px-4"
                 style={{ transitionDelay: "0.1s" }}
               >
                 We build exceptional, scalable SaaS products and innovative tech
@@ -90,24 +92,25 @@ const Hero = () => {
               </p>
             </div>
             <div
-              className="flex flex-col sm:flex-row gap-4 justify-center reveal fade-bottom"
+              className="flex flex-col sm:flex-row gap-3 justify-center reveal fade-bottom px-4 max-w-md mx-auto w-full"
               style={{ transitionDelay: "0.2s" }}
             >
               <Link href="/products" className={"w-full sm:w-auto"}>
                 <Button
-                  size="lg"
+                  size="default"
                   variant="outline"
-                  className="w-full sm:w-auto text-lg px-8 h-12 rounded-full border border-gray-200 bg-white hover:bg-gray-50 shadow-md"
+                  className="w-full sm:w-auto text-sm md:text-base px-4 md:px-6 h-10 md:h-11 rounded-full border border-gray-200 bg-white hover:bg-gray-50 shadow-md"
                 >
                   Explore our products
                 </Button>
               </Link>
               <Link href="/contact" className="w-full sm:w-auto">
                 <Button
-                  size="lg"
-                  className="w-full sm:w-auto text-lg px-8 h-12 rounded-full bg-primary hover:bg-primary/90 text-white shadow-md"
+                  size="default"
+                  className="w-full sm:w-auto text-sm md:text-base px-4 md:px-6 h-10 md:h-11 rounded-full bg-primary hover:bg-primary/90 text-white shadow-md"
                 >
-                  Get in touch <ArrowRight className="h-5 w-5 ml-2" />
+                  Get in touch{" "}
+                  <ArrowRight className="h-3.5 md:h-4 w-3.5 md:w-4 ml-2" />
                 </Button>
               </Link>
             </div>

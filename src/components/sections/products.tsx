@@ -31,7 +31,7 @@ const Products = () => {
   }, []);
 
   return (
-    <section id="products" className="w-full py-20 bg-[#F3FDF7]">
+    <section id="products" className="w-full py-20 ">
       {/* Background texture
       <div className="absolute inset-0 opacity-40 bg-grid-pattern mix-blend-soft-light pointer-events-none" />
       <div className="absolute top-0 left-0 right-0 h-40 bg-gradient-to-b from-background to-transparent" />
