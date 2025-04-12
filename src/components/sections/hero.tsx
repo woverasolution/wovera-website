@@ -12,8 +12,6 @@ const dawningNewDay = Yellowtail({
   weight: ["400"],
 });
 
-
-
 const Hero = () => {
   useEffect(() => {
     const revealElements = document.querySelectorAll(".reveal");
@@ -66,7 +64,7 @@ const Hero = () => {
       <div className="container px-4 md:px-6 relative z-10">
         <div className="flex flex-col items-center justify-center -mt-65">
           <div className="flex flex-col justify-center space-y-8 text-center max-w-3xl">
-            <div className="space-y-6">
+            <div className="space-y-4">
               <div className="relative">
                 <h1 className="text-5xl font-bold tracking-tighter sm:text-6xl xl:text-7xl/none reveal fade-bottom flex flex-col items-center gap-4">
                   <span className={""}>We make products that</span>
@@ -76,7 +74,12 @@ const Hero = () => {
                     Just Work
                   </span>
                 </h1>
-                <LineSvg width={280} />
+                <div
+                  className="reveal fade-bottom"
+                  style={{ transitionDelay: "0.5s" }}
+                >
+                  <LineSvg width={280} />
+                </div>
               </div>
               <p
                 className="text-muted-foreground reveal fade-bottom max-w-2xl mx-auto"
@@ -127,7 +130,29 @@ const LineSvg = ({ width = 240 }: { width?: number }) => {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
+      <style>
+        {`
+          @keyframes drawLine {
+            0% {
+              stroke-dashoffset: 200;
+            }
+            to {
+              stroke-dashoffset: 0;
+            }
+          }
+          .animated-line {
+            stroke-dasharray: 200;
+            stroke-dashoffset: 200;
+            opacity: 0;
+          }
+          .reveal.active .animated-line {
+            opacity: 1;
+            animation: drawLine 1.5s ease-out forwards;
+          }
+        `}
+      </style>
       <path
+        className="animated-line"
         d="M10.8721 8.46773C25.6811 7.29616 40.7753 7.35825 55.655 7.35825C70.5348 7.35825 85.4146 7.35825 100.294 8.46773C105.701 8.89915 111.108 9.39264 116.516 9.88616"
         stroke="url(#paint0_linear_301_2)"
         strokeWidth="2.5"

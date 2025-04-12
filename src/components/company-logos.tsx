@@ -1,66 +1,76 @@
-import Image from 'next/image';
-import { InfiniteSlider } from './ui/infinite-slider';
+import Image from "next/image";
+import { InfiniteSlider } from "./ui/infinite-slider";
 
 const companies = [
   {
-    name: 'Ethio Dance Fitness',
-    logo: '/logos/edf-logo.png',
+    name: "Ethio Dance Fitness",
+    logo: "/logos/edf-logo.png",
+  },
+
+  {
+    name: "Africa Medical College",
+    logo: "/logos/amc-logo.png",
   },
   {
-    name: 'Brewtech GmBh',
-    logo: '/logos/brewtech-logo.png',
+    name: "INTAPS",
+    logo: "/logos/intaps-logo.png",
   },
   {
-    name: 'Africa Medical College',
-    logo: '/logos/amc-logo.png',
+    name: "Brewtech GmBh",
+    logo: "/logos/brewtech-logo.png",
   },
   {
-    name: 'INTAPS',
-    logo: '/logos/intaps-logo.png',
+    name: "Mowe",
+    logo: "/logos/mowe-logo.png",
   },
-  
-  
+
+  {
+    name: "DDLMB",
+    logo: "/logos/dire-logo.png",
+  },
+
   // Add more companies as needed
 ];
 
 export function CompanyLogos() {
   return (
-    <section className="relative py-24 overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-50/80 via-slate-100/90 to-slate-50/80" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.1)_0%,rgba(255,255,255,0.4)_100%)]" />
-      <div className="container relative">
-        <div className="space-y-8">
-          <div className="space-y-2 text-center">
-            <h2 className="text-2xl font-semibold tracking-tight">
+    <section className="w-full py-12 md:py-24">
+      <div className="w-full px-4">
+        <div className="flex flex-col items-center gap-8">
+          <div className="text-center">
+            <h2 className="text-3xl font-bold tracking-tight">
               Trusted by Industry Leaders
             </h2>
-            <p className="text-muted-foreground">
+            <p className="text-muted-foreground mt-2">
               Powering innovation across leading companies worldwide
             </p>
           </div>
-          
-          <InfiniteSlider 
-            duration={30} 
-            durationOnHover={60}
-            gap={48}
-            className="py-8"
-          >
-            {companies.map((company, index) => (
-              <div
-                key={index}
-                className="relative w-[200px] h-16 opacity-70 hover:opacity-100 transition-all duration-300 filter hover:brightness-110"
-              >
-                <Image
-                  src={company.logo}
-                  alt={`${company.name} logo`}
-                  fill
-                  className="object-contain"
-                />
-              </div>
-            ))}
-          </InfiniteSlider>
+
+          <div className="w-screen overflow-hidden">
+            <InfiniteSlider
+              duration={30}
+              durationOnHover={60}
+              gap={5}
+              className="w-full"
+            >
+              {companies.map((company, index) => (
+                <div
+                  key={index}
+                  className="flex items-center justify-center opacity-70 hover:opacity-100 transition-all duration-300 border border-green-200 bg-green-50/80 rounded-xs p-5 px-7"
+                >
+                  <Image
+                    src={company.logo}
+                    alt={`${company.name} logo`}
+                    width={170} 
+                    height={70}
+                    // className="object-contain w-auto h-[40px] md:h-[60px]"
+                  />
+                </div>
+              ))}
+            </InfiniteSlider>
+          </div>
         </div>
       </div>
     </section>
   );
-} 
+}
