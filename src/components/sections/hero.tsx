@@ -8,10 +8,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect } from "react";
 
-const dawningNewDay = Yellowtail({
+export const cursiveFont = Yellowtail({
   subsets: ["latin"],
   weight: ["400"],
 });
+
 
 const Hero = () => {
   const isMobile = useIsMobile();
@@ -71,7 +72,7 @@ const Hero = () => {
                 <h1 className="text-6xl md:text-4xl font-bold tracking-tighter sm:text-6xl xl:text-7xl/none reveal fade-bottom flex flex-col items-center gap-2 md:gap-4">
                   <span className={""}>We make products that</span>
                   <span
-                    className={`${dawningNewDay.className} text-primary text-6xl sm:text-7xl xl:text-8xl -mt-1 md:-mt-4`}
+                    className={`${cursiveFont.className} text-primary text-6xl sm:text-7xl xl:text-8xl -mt-1 md:-mt-4`}
                   >
                     Just Work
                   </span>

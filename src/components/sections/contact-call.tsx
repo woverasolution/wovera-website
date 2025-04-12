@@ -8,10 +8,10 @@ const ContactCall = () => {
   return (
     <div className="w-full">
       <div className="container px-4 mx-auto md:max-w-6xl">
-        <div className="relative overflow-visible rounded-3xl bg-gradient-to-br from-yellow-50/80 via-green-100/20 to-green-100">
+        <div className="relative overflow-visible border-2 border-green-100 rounded-3xl bg-gradient-to-br from-yellow-50/80 via-green-100/20 to-green-100">
           <div className="flex flex-col md:flex-row items-center justify-between p-4 md:p-6 gap-4">
             {/* Content Section */}
-            <div className="flex-1 z-10 max-w-xl pl-12">
+            <div className="flex-1 z-10 max-w-xl pl-2 pt-4 md:pt-0 md:pl-12 ">
               <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-1">
                 Get in touch
               </h2>
@@ -57,8 +57,8 @@ const ContactCall = () => {
             </div>
 
             {/* Image Section */}
-            <div className="relative flex-1 min-h-[180px] md:min-h-[280px]">
-              <div className="absolute -right-4 -top-16 md:-right-6 md:-top-20 w-[220px] md:w-[400px]">
+            <div className="relative flex-1 min-h-[200px] md:min-h-[280px] w-full">
+              <div className="absolute right-0 bottom-2 md:-right-6 md:-top-20 w-[260px] md:w-[400px]">
                 <Image
                   src="/images/lion.png"
                   alt="Support Lion"

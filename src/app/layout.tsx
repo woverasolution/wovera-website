@@ -1,13 +1,15 @@
 import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
+import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
 import { Source_Sans_3 } from "next/font/google";
 import type React from "react";
 import "./globals.css";
-import { cn } from "@/lib/utils";
 
 // const inter = Inter({ subsets: ["latin"] })
 const eczar = Source_Sans_3({ subsets: ["latin"] });
+
+
 
 export const metadata: Metadata = {
   title: "Wovera Solutions PLC",
@@ -16,6 +18,9 @@ export const metadata: Metadata = {
     icon: "/svg/wovera-icon.svg",
   },
 };
+
+
+
 
 export default function RootLayout({
   children,

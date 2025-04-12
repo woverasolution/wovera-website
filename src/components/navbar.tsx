@@ -245,7 +245,7 @@ const Navbar = () => {
           </SheetTrigger>
           <SheetContent
             side="right"
-            className="p-0 bg-gradient-to-br from-background to-secondary/20"
+            className="p-0 bg-white from-background p-4"
           >
             <nav className="flex flex-col space-y-1 mt-8">
               <Link

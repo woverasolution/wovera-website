@@ -1,7 +1,7 @@
-import ServicesHero from "@/components/services/services-hero"
-import ServicesDetails from "@/components/services/services-details"
-import ServicesCTA from "@/components/services/services-cta"
+import ContactCall from "@/components/sections/contact-call"
 import ProcessSection from "@/components/services/process-section"
+import ServicesDetails from "@/components/services/services-details"
+import ServicesHero from "@/components/services/services-hero"
 
 export const metadata = {
   title: "Services | Wovera",
@@ -15,8 +15,10 @@ export default function ServicesPage() {
       <ServicesHero />
       <ServicesDetails />
       <ProcessSection />
-      <ServicesCTA />
+      <div className="w-full pt-10">
+        <ContactCall />
+      </div>
     </main>
-  )
+  );
 }
 
