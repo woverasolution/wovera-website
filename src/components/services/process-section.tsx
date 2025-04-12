@@ -1,6 +1,5 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import {
   Card,
   CardContent,
@@ -8,9 +7,11 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
+import Image from "next/image";
+import { useEffect, useState } from "react";
+import { WaveSeparator } from "../ui/wave-separator";
 
 const ProcessSection = () => {
   const [activeStep, setActiveStep] = useState<number | null>(null);
@@ -45,7 +46,7 @@ const ProcessSection = () => {
       description: "Understanding your needs",
       content:
         "We begin by deeply understanding your business, challenges, and objectives through collaborative workshops and research.",
-      icon: "🔍",
+      image: "/images/discovery.png",
       color: "from-blue-500/20 to-indigo-500/20",
       borderColor: "group-hover:border-blue-500/50",
     },
@@ -54,7 +55,7 @@ const ProcessSection = () => {
       description: "Planning the solution",
       content:
         "We develop a comprehensive strategy and roadmap tailored to your specific requirements and business goals.",
-      icon: "🧠",
+      image: "/images/strategy.png",
       color: "from-purple-500/20 to-pink-500/20",
       borderColor: "group-hover:border-purple-500/50",
     },
@@ -63,7 +64,7 @@ const ProcessSection = () => {
       description: "Building with precision",
       content:
         "Our expert team designs and develops your solution using agile methodologies, ensuring quality at every step.",
-      icon: "⚙️",
+      image: "/images/development.png",
       color: "from-amber-500/20 to-orange-500/20",
       borderColor: "group-hover:border-amber-500/50",
     },
@@ -72,7 +73,7 @@ const ProcessSection = () => {
       description: "Continuous improvement",
       content:
         "We deploy your solution and provide ongoing support, optimization, and enhancements to ensure long-term success.",
-      icon: "🚀",
+      image: "/images/growth.png",
       color: "from-emerald-500/20 to-green-500/20",
       borderColor: "group-hover:border-emerald-500/50",
     },
@@ -83,38 +84,71 @@ const ProcessSection = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2,
+        staggerChildren: 0.3,
+        delayChildren: 0.2,
       },
     },
   };
 
   const cardVariants = {
-    hidden: { opacity: 0, y: 50 },
+    hidden: { opacity: 0, x: -50 },
     visible: {
       opacity: 1,
-      y: 0,
-      transition: { duration: 0.7, ease: "easeOut" },
+      x: 0,
+      transition: {
+        duration: 0.7,
+        ease: "easeOut",
+      },
+    },
+  };
+
+  const imageVariants = {
+    hidden: { opacity: 0, scale: 0.8, rotate: -10 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      rotate: 0,
+      transition: {
+        duration: 0.5,
+        ease: "easeOut",
+        delay: 0.2,
+      },
+    },
+  };
+
+  const arrowVariants = {
+    hidden: { opacity: 0, x: -20 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        duration: 0.5,
+        ease: "easeOut",
+        delay: 0.5,
+      },
     },
   };
 
   return (
-    <section className="w-full py-24 bg-gradient-to-br from-primary/5 to-primary/10 overflow-hidden">
-      <div className="container px-4 md:px-6">
+    <section className="w-full py-24 bg-gradient-to-br -mt-20  from-yellow-50/10 to-primary/5 overflow-hidden">
+      <div className="container px-4 md:px-6 mx-auto">
         <motion.div
-          className="flex flex-col items-center justify-center space-y-4 text-center mb-20"
+          className="flex flex-col items-center justify-center  text-center mb-10"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
         >
-          <div className="space-y-2">
-            <div className="flex justify-center mb-4">
-              <div className="h-1.5 w-12 bg-primary rounded-full"></div>
-            </div>
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl md:text-6xl bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary/70">
+          <div className=" w-full text-center">
+            <h2
+              className={cn(
+                "text-3xl font-bold tracking-tighter sm:text-5xl md:text-6xl bg-clip-text",
+                "reveal fade-bottom"
+              )}
+            >
               Our Process
             </h2>
-            <p className="max-w-[700px] text-muted-foreground md:text-xl mt-4">
+            <p className="max-w-[500px] text-muted-foreground md:text-xl mt-1 mx-auto ">
               We follow a proven methodology to deliver exceptional results for
               every project.
             </p>
@@ -122,7 +156,7 @@ const ProcessSection = () => {
         </motion.div>
 
         <motion.div
-          className="relative grid gap-8 md:grid-cols-2 lg:grid-cols-4"
+          className="relative grid gap-4 md:gap-10 md:grid-cols-2 lg:grid-cols-4 mx-auto justify-center "
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -131,15 +165,16 @@ const ProcessSection = () => {
           {steps.map((step, index) => (
             <motion.div
               key={step.title}
-              className="relative group"
+              className="relative group min-w-[300px]"
               variants={cardVariants}
+              custom={index}
               onMouseEnter={() => setActiveStep(index)}
               onMouseLeave={() => setActiveStep(null)}
             >
               <Card
                 className={cn(
-                  "h-full transition-all duration-500 ease-in-out hover:scale-105",
-                  "bg-gradient-to-br backdrop-blur-sm border-2",
+                  "h-full  transition-all duration-500 ease-in-out hover:scale-105 rounded-sm",
+                  "bg-gradient-to-br backdrop-blur-sm shadow-none",
                   "hover:shadow-[0_0_30px_rgba(0,0,0,0.1)]",
                   step.borderColor,
                   activeStep === index
@@ -147,62 +182,59 @@ const ProcessSection = () => {
                     : "bg-card/80"
                 )}
               >
-                <div className="absolute inset-0 bg-gradient-to-br opacity-0 group-hover:opacity-10 transition-opacity duration-500 rounded-xl overflow-hidden" />
+                <div
+                  className={cn(
+                    "absolute inset-0 bg-gradient-to-br transition-opacity duration-500 rounded-md overflow-hidden",
+                    step.color,
+                    "opacity-40 group-hover:opacity-25"
+                  )}
+                />
 
                 <CardHeader className="relative">
-                  <div className="flex flex-col items-center">
-                    <div className="text-4xl mb-4">{step.icon}</div>
-                    <div className="flex items-center justify-center h-10 w-10 rounded-full bg-primary/10 border border-primary/20 text-primary text-lg font-semibold mb-4 group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300">
+                  <div className="flex items-center gap-2 justify-between">
+                    <div className="flex items-center justify-center h-10 w-10 rounded-md bg-primary/10 border-2 border-primary/20 text-primary text-lg font-semibold mb-4 group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300">
                       {index + 1}
                     </div>
+                    <div className="absolute top-1 right-5">
+                      <motion.div variants={imageVariants}>
+                        <Image
+                          src={step.image}
+                          alt={step.title}
+                          width={70}
+                          height={70}
+                        />
+                      </motion.div>
+                    </div>
                   </div>
-                  <CardTitle className="text-xl font-bold">
+                  <CardTitle className="text-xl font-bold -mt-2">
                     {step.title}
                   </CardTitle>
-                  <CardDescription className="text-sm font-medium">
+                  <CardDescription className="text-sm font-medium -mt-2">
                     {step.description}
                   </CardDescription>
                 </CardHeader>
+                <WaveSeparator className="max-w-[300px] pl-2 -my-4" />
                 <CardContent>
                   <p className="text-muted-foreground text-sm leading-relaxed">
                     {step.content}
                   </p>
-
-                  <div className="mt-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                    <div className="flex items-center text-primary text-sm font-medium">
-                      <span>Learn more</span>
-                      <ArrowRight className="h-4 w-4 ml-1" />
-                    </div>
-                  </div>
                 </CardContent>
               </Card>
 
               {index < 3 && (
-                <div className="absolute top-1/2 -right-4 hidden lg:flex items-center justify-center transform -translate-y-1/2 w-8 h-8 z-10">
-                  <motion.div
-                    className="w-12 h-0.5 bg-gradient-to-r from-primary/80 to-primary/20"
-                    initial={{ scaleX: 0, originX: 0 }}
-                    whileInView={{ scaleX: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0.5 + index * 0.2, duration: 0.6 }}
-                  />
+                <div className="absolute top-1/2 -right-11 hidden lg:flex items-center justify-center transform -translate-y-1/2 z-10">
+                  <motion.div variants={arrowVariants} custom={index}>
+                    <Image
+                      src="/images/arrow.png"
+                      alt="Arrow right"
+                      width={60}
+                      height={60}
+                    />
+                  </motion.div>
                 </div>
               )}
             </motion.div>
           ))}
-        </motion.div>
-
-        <motion.div
-          className="mt-16 text-center"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.8, duration: 0.5 }}
-        >
-          <div className="inline-flex items-center px-6 py-3 bg-primary/90 hover:bg-primary text-primary-foreground rounded-full transition-all duration-300 cursor-pointer hover:shadow-lg group">
-            <span className="font-medium">Start your journey</span>
-            <CheckCircle2 className="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
-          </div>
         </motion.div>
       </div>
     </section>

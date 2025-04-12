@@ -114,11 +114,11 @@ const ServicesDetails = () => {
   return (
     <section id="services" className="w-full py-20 max-w-7xl mx-auto">
       <div className="container px-4 md:px-6">
-        <div className="space-y-25">
+        <div className="space-y-10">
           {services.map((service, index) => (
             <div
               key={service.title}
-              className="grid gap-4 lg:grid-cols-2 lg:gap-1 items-center"
+              className="grid gap-4 lg:grid-cols-2 lg:gap-1 items-center border-b pb-15"
             >
               <div
                 className={`flex flex-col justify-center space-y-4 reveal ${

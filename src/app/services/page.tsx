@@ -15,9 +15,9 @@ export default function ServicesPage() {
       <ServicesHero />
       <ServicesDetails />
       <ProcessSection />
-      <div className="w-full pt-10">
+      <div className="w-full py-10">
         <ContactCall />
-      </div>
+      </div> 
     </main>
   );
 }
