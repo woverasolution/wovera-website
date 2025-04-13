@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 
 const ProductHero = () => {
   useEffect(() => {
@@ -36,20 +37,18 @@ const ProductHero = () => {
       <div
         className="w-full h-full"
         style={{
-          backgroundImage:
-            "radial-gradient(circle at 50% 50%, rgba(99, 102, 241, 0.07) 0%, rgba(99, 102, 241, 0.02) 50%, transparent 100%)",
-          backgroundSize: "100% 100%",
+       
         }}
       >
         <div className="container px-4 md:px-6 mx-auto py-20">
-          <div className="flex flex-col items-center justify-center space-y-8 text-center max-w-3xl mx-auto">
-            <div className="space-y-4 reveal fade-bottom ">
+          <div className="flex flex-col items-start  justify-center space-y-8 text-center max-w-3xl mx-auto">
+            <div className="space-y-4 reveal fade-bottom text-left">
               <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary/70">
                 The Wovera Suite
               </h1>
-              <div className="h-0.5 w-40 bg-primary/40 mx-auto rounded-full -mt-2"></div>
+              <div className="h-0.5 w-40 bg-primary/40 rounded-full -mt-2"></div>
 
-              <p className="max-w-[600px] text-muted-foreground md:text-xl mx-auto">
+              <p className="max-w-[600px] text-muted-foreground md:text-xl">
                 Our growing collection of proven, scalable SaaS products
                 designed to solve real-world problems.
               </p>
@@ -58,7 +57,7 @@ const ProductHero = () => {
             <div
               className={cn(
                 "flex flex-col gap-4 min-[400px]:flex-row reveal fade-bottom",
-                "backdrop-blur-sm py-2 px-3 rounded-full border border-primary/10"
+                "backdrop-blur-sm py-2 px-3 rounded-full border border-primary/10 border-2"
               )}
               style={{ transitionDelay: "0.1s" }}
             >
@@ -80,6 +79,15 @@ const ProductHero = () => {
             </div>
           </div>
         </div>
+      </div>
+      <div>
+        <Image
+          src="/images/products-hero.png"
+          alt="Product Hero"
+          width={1000}
+          height={1000}
+          className="absolute top-0 right-0 opacity-5 lg:opacity-15"
+        />
       </div>
     </section>
   );
