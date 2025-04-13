@@ -4,6 +4,9 @@ import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
 import { Source_Sans_3 } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+
+
 
 import type React from "react";
 import "./globals.css";
@@ -37,6 +40,7 @@ export default function RootLayout({
           eczar.className
         )}
       >
+        <SpeedInsights />
         <Analytics />
         <Navbar />
         <main>{children}</main>
