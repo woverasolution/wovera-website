@@ -116,18 +116,18 @@ const ProcessSection = () => {
     },
   };
 
-  const arrowVariants = {
-    hidden: { opacity: 0, x: -20 },
-    visible: {
-      opacity: 1,
-      x: 0,
-      transition: {
-        duration: 0.5,
-        ease: "easeOut",
-        delay: 0.5,
-      },
-    },
-  };
+  // const arrowVariants = {
+  //   hidden: { opacity: 0, x: -20 },
+  //   visible: {
+  //     opacity: 1,
+  //     x: 0,
+  //     transition: {
+  //       duration: 0.5,
+  //       ease: "easeOut",
+  //       delay: 0.5,
+  //     },
+  //   },
+  // };
 
   return (
     <section className="w-full py-24 bg-gradient-to-br -mt-20  from-yellow-50/10 to-primary/5 overflow-hidden">
@@ -156,7 +156,7 @@ const ProcessSection = () => {
         </motion.div>
 
         <motion.div
-          className="relative grid gap-4 md:gap-10 md:grid-cols-2 lg:grid-cols-4 mx-auto justify-center "
+          className="relative grid gap-4 md:gap-2 md:grid-cols-2 lg:grid-cols-4 mx-auto justify-center "
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -165,7 +165,7 @@ const ProcessSection = () => {
           {steps.map((step, index) => (
             <motion.div
               key={step.title}
-              className="relative group min-w-[300px]"
+              className="relative group min-w-[300px] hover:z-10"
               variants={cardVariants}
               custom={index}
               onMouseEnter={() => setActiveStep(index)}
@@ -192,7 +192,14 @@ const ProcessSection = () => {
 
                 <CardHeader className="relative">
                   <div className="flex items-center gap-2 justify-between">
-                    <div className="flex items-center justify-center h-10 w-10 rounded-md bg-primary/10 border-2 border-primary/20 text-primary text-lg font-semibold mb-4 group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300">
+                    <div
+                      className={cn(
+                        "flex items-center justify-center h-10 w-10 rounded-md bg-primary/5 border-2 border-primary/20 text-primary ",
+                        activeStep === index &&
+                          "bg-primary text-primary-foreground",
+                        "text-lg font-bold mb-4 group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300"
+                      )}
+                    >
                       {index + 1}
                     </div>
                     <div className="absolute top-1 right-5">
@@ -206,7 +213,7 @@ const ProcessSection = () => {
                       </motion.div>
                     </div>
                   </div>
-                  <CardTitle className="text-xl font-bold -mt-2">
+                  <CardTitle className="text-xl font-bold -mt-3">
                     {step.title}
                   </CardTitle>
                   <CardDescription className="text-sm font-medium -mt-2">
@@ -221,7 +228,7 @@ const ProcessSection = () => {
                 </CardContent>
               </Card>
 
-              {index < 3 && (
+              {/* {index < 3 && (
                 <div className="absolute top-1/2 -right-11 hidden lg:flex items-center justify-center transform -translate-y-1/2 z-10 opacity-100 transition-opacity duration-300 group-hover:opacity-0">
                   <motion.div variants={arrowVariants} custom={index}>
                     <Image
@@ -232,7 +239,7 @@ const ProcessSection = () => {
                     />
                   </motion.div>
                 </div>
-              )}
+              )} */}
             </motion.div>
           ))}
         </motion.div>
