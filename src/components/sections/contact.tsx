@@ -34,7 +34,7 @@ const Contact = () => {
   }, [])
 
   return (
-    <section id="contact" className="w-full py-20">
+    <section id="contact" className="w-full py-20 flex justify-center items-center">
       <div className="container px-4 md:px-6">
         <div className="flex flex-col items-center justify-center space-y-4 text-center">
           <div className="space-y-2 reveal fade-bottom">
@@ -55,14 +55,14 @@ const Contact = () => {
                 <Mail className="mt-0.5 h-5 w-5 text-primary" />
                 <div>
                   <h3 className="font-medium">Email</h3>
-                  <p className="text-sm text-muted-foreground">info@wovera.com</p>
+                  <p className="text-sm text-muted-foreground">info@woverasolutions.com</p>
                 </div>
               </div>
               <div className="flex items-start space-x-4">
                 <Phone className="mt-0.5 h-5 w-5 text-primary" />
                 <div>
                   <h3 className="font-medium">Phone</h3>
-                  <p className="text-sm text-muted-foreground">+1 (123) 456-7890</p>
+                  <p className="text-sm text-muted-foreground">+251 910428013</p>
                 </div>
               </div>
               <div className="flex items-start space-x-4">

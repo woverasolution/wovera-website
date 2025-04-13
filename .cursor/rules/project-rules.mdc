@@ -11,6 +11,6 @@ alwaysApply: true
 - For SEO, adhere to best SEO practices in our stack NextJs with Typescript
 
 Tech considerations:
-- We use pnpm for package management 
+- We use pnpm for package management. Always use pnpm if you want to install anything.
 - We use NextJS with typescript and shadcnui 
 - Remeber ESLINT rules. No unused vars, no using 'any' variable type

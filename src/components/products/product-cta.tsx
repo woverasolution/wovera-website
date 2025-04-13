@@ -32,9 +32,9 @@ const ProductCTA = () => {
 
   return (
     <section className="w-full py-20 bg-[url('/placeholder.svg?height=1080&width=1920')] bg-cover bg-center bg-no-repeat">
-      <div className="container px-4 md:px-6">
-        <div className="mx-auto max-w-3xl bg-white/90 backdrop-blur-sm p-8 rounded-lg shadow-lg">
-          <div className="flex flex-col items-center justify-center space-y-4 text-center reveal fade-bottom">
+      <div className="container mx-auto flex justify-center px-4 md:px-6">
+        <div className="w-full max-w-3xl bg-white/90 backdrop-blur-sm p-8 rounded-lg shadow-lg text-center">
+          <div className="flex flex-col items-center justify-center space-y-4 reveal fade-bottom">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
               Ready to transform your business?
             </h2>
