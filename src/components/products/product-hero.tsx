@@ -56,7 +56,7 @@ const ProductHero = () => {
 
             <div
               className={cn(
-                "flex flex-col gap-4 min-[400px]:flex-row reveal fade-bottom",
+                "flex gap-2 min-[400px]:flex-row reveal fade-bottom",
                 "backdrop-blur-sm py-2 px-3 rounded-full border border-primary/10 border-2"
               )}
               style={{ transitionDelay: "0.1s" }}
@@ -86,7 +86,7 @@ const ProductHero = () => {
           alt="Product Hero"
           width={1000}
           height={1000}
-          className="absolute top-0 right-0 opacity-5 lg:opacity-15"
+          className="absolute top-0 right-0 opacity-5 lg:opacity-5"
         />
       </div>
     </section>
