@@ -1,7 +1,7 @@
 import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
 import { cn } from "@/lib/utils";
-import type { Metadata } from "next";
+import { generateMetadata } from "@/lib/metadata";
 import { Source_Sans_3 } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
@@ -16,13 +16,7 @@ const eczar = Source_Sans_3({ subsets: ["latin"] });
 
 
 
-export const metadata: Metadata = {
-  title: "Wovera Solutions PLC",
-  description: "Building technology solutions that matter",
-  icons: {
-    icon: "/svg/wovera-icon.svg",
-  },
-};
+export const metadata = generateMetadata();
 
 
 
