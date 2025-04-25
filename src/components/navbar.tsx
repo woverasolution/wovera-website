@@ -81,6 +81,7 @@ const Navbar = () => {
                   </NavigationMenuLink>
                 </Link>
               </NavigationMenuItem>
+
               <NavigationMenuItem>
                 <NavigationMenuTrigger className="bg-transparent hover:bg-accent">
                   Products
@@ -221,7 +222,13 @@ const Navbar = () => {
                   </ul>
                 </NavigationMenuContent>
               </NavigationMenuItem>
-
+              <NavigationMenuItem>
+                <Link href="/projects" legacyBehavior passHref>
+                  <NavigationMenuLink className="group inline-flex h-9 w-max items-center justify-center rounded-full bg-transparent px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50">
+                    Projects
+                  </NavigationMenuLink>
+                </Link>
+              </NavigationMenuItem>
               <NavigationMenuItem>
                 <Link href="/contact" legacyBehavior passHref>
                   <NavigationMenuLink className="group inline-flex h-9 w-max items-center justify-center rounded-full bg-transparent px-4 py-2 text-sm font-medium transition-colors hover:bg-green-100/20 hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50">
@@ -258,6 +265,7 @@ const Navbar = () => {
                 <span>Home</span>
                 <ChevronRight className="ml-auto h-5 w-5 text-muted-foreground opacity-50 group-hover:opacity-100 transition-opacity group-hover:translate-x-1 duration-300" />
               </Link>
+
               <Link
                 href="/products"
                 className="flex items-center gap-3 p-3 text-lg font-medium transition-all hover:bg-gradient-to-r hover:from-primary/20 hover:to-primary/10 group relative overflow-hidden"
@@ -276,6 +284,16 @@ const Navbar = () => {
                 <div className="absolute left-0 w-1 h-full bg-primary/40 opacity-0 group-hover:opacity-100 transition-opacity"></div>
                 <Settings className="h-5 w-5 text-primary" />
                 <span>Services</span>
+                <ChevronRight className="ml-auto h-5 w-5 text-muted-foreground opacity-50 group-hover:opacity-100 transition-opacity group-hover:translate-x-1 duration-300" />
+              </Link>
+              <Link
+                href="/projects"
+                className="flex items-center gap-3 p-3 text-lg font-medium transition-all hover:bg-gradient-to-r hover:from-primary/20 hover:to-primary/10 group relative overflow-hidden"
+                onClick={handleNavItemClick}
+              >
+                <div className="absolute left-0 w-1 h-full bg-primary/40 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                <Package className="h-5 w-5 text-primary" />
+                <span>Projects</span>
                 <ChevronRight className="ml-auto h-5 w-5 text-muted-foreground opacity-50 group-hover:opacity-100 transition-opacity group-hover:translate-x-1 duration-300" />
               </Link>
 
