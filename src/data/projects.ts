@@ -72,12 +72,12 @@ export const projects: Project[] = [
       "Reduced wait times via the CIS Appointment Portal",
       "Elevated DDLDMB's operational efficiency",
     ],
-    testimonial: {
-      quote:
-        "Wovera's work transformed our legacy CIS into a modern, reliable system that has streamlined our land administration processes.",
-      author: "John Doe",
-      position: "Director, DDLDMB",
-    },
+    // testimonial: {
+    //   quote:
+    //     "Wovera's work transformed our legacy CIS into a modern, reliable system that has streamlined our land administration processes.",
+    //   author: "John Doe",
+    //   position: "Director, DDLDMB",
+    // },
   },
   {
     id: "wumis-water-utility-mis",
