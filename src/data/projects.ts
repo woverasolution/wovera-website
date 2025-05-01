@@ -43,7 +43,7 @@ export const projects: Project[] = [
     shortDescription:
       "Complete rewrite and modernization of Ethiopia's premier cadastre platform into a workflow-driven CIS10 for the Dire Dawa Land Development and Management Bureau.",
     fullDescription:
-      "Wovera Solutions PLC partnered with the Dire Dawa Land Development and Management Bureau (DDLDMB) to rewrite and modernize the Cadastre Information System (CIS). We led end-to-end requirements gathering, technical documentation, and a full-scale rewrite of the CIS Core platform, and developed a CIS Appointment Portal to enable online landowner scheduling—significantly reducing on-site congestion and wait times.",
+      "Wovera Solutions PLC, subcontracted by INTAPS Consultancy PLC, partnered with the Dire Dawa Land Development and Management Bureau (DDLDMB) to rewrite and modernize the Cadastre Information System (CIS). We led end-to-end requirements gathering, technical documentation, and a full-scale rewrite of the CIS Core platform, and developed a CIS Appointment Portal to enable online services for landowners—significantly reducing on-site congestion and wait times.",
     thumbnail: "/images/projects/cis.png",
     images: [
       "/images/projects/cis1.jpg",
