@@ -38,7 +38,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <Link
-                    href="#products"
+                    href="/products"
                     className="text-muted-foreground hover:text-primary transition-colors"
                   >
                     Products
@@ -46,7 +46,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <Link
-                    href="#services"
+                    href="/services"
                     className="text-muted-foreground hover:text-primary transition-colors"
                   >
                     Services
@@ -54,7 +54,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <Link
-                    href="#about"
+                    href="/about"
                     className="text-muted-foreground hover:text-primary transition-colors"
                   >
                     About
@@ -62,7 +62,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <Link
-                    href="#contact"
+                    href="/contact"
                     className="text-muted-foreground hover:text-primary transition-colors"
                   >
                     Contact
@@ -76,7 +76,7 @@ const Footer = () => {
               <ul className="space-y-3">
                 <li>
                   <Link
-                    href="#abal"
+                    href="https://abal.et" target="_blank"
                     className="text-muted-foreground hover:text-primary transition-colors"
                   >
                     Abal
@@ -111,13 +111,13 @@ const Footer = () => {
               </ul>
               <div className="flex space-x-4 mt-6">
                 <Link
-                  href="https://www.linkedin.com/company/wovera-solutions/"
+                  href="https://www.linkedin.com/company/wovera-solutions/" target="_blank"
                   className="text-muted-foreground hover:text-primary transition-colors"
                 >
                   <Linkedin size={20} />
                 </Link>
                 <Link
-                  href="https://github.com/wovera"
+                  href="https://github.com/wovera" target="_blank"
                   className="text-muted-foreground hover:text-primary transition-colors"
                 >
                   <Github size={20} />
