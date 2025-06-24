@@ -31,7 +31,12 @@ export function generateMetadata({
       canonical: normalizedPath || "/",
     },
     icons: {
-      icon,
+      icon: [
+        { url: icon },
+        { url: "/wovera-icon.ico", type: "image/x-icon", sizes: "any" },
+        { url: "/svg/wovera-icon.svg", type: "image/svg+xml" },
+      ],
+      apple: "/svg/wovera-icon.svg",
     },
   };
 } 

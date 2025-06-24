@@ -34,6 +34,18 @@ export default function RootLayout({
           eczar.className
         )}
       >
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: "Wovera Solutions PLC",
+              url: "https://www.woverasolutions.com",
+              logo: "https://www.woverasolutions.com/wovera.svg",
+            }),
+          }}
+        />
         <SpeedInsights />
         <Analytics />
         <Navbar />
