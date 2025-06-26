@@ -62,7 +62,7 @@ const ProjectsHero = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="mx-auto mt-6 max-w-[700px] text-muted-foreground md:text-xl/relaxed lg:text-xl/relaxed xl:text-xl/relaxed"
           >
-            Discover how we&apos;ve helped leading organizations across Ethiopia
+            Discover how we&apos;ve helped leading organizations across the world
             transform their digital presence and achieve remarkable results.
           </motion.p>
 

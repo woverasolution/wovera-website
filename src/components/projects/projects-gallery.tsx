@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { ArrowLeft, ArrowRight, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -18,15 +18,33 @@ import { motion } from "framer-motion";
 const ProjectsGallery = () => {
   const [carouselApi, setCarouselApi] = useState<CarouselApi>();
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [canScrollPrev, setCanScrollPrev] = useState(false);
+  const [canScrollNext, setCanScrollNext] = useState(false);
 
   const handleCarouselApi = (api: CarouselApi) => {
     setCarouselApi(api);
     if (api) {
+      setCanScrollPrev(api.canScrollPrev());
+      setCanScrollNext(api.canScrollNext());
+
       api.on("select", () => {
         setCurrentSlide(api.selectedScrollSnap());
+        setCanScrollPrev(api.canScrollPrev());
+        setCanScrollNext(api.canScrollNext());
+      });
+      api.on("resize", () => {
+        setCanScrollPrev(api.canScrollPrev());
+        setCanScrollNext(api.canScrollNext());
       });
     }
   };
+
+  useEffect(() => {
+    if (carouselApi) {
+      setCanScrollPrev(carouselApi.canScrollPrev());
+      setCanScrollNext(carouselApi.canScrollNext());
+    }
+  }, [carouselApi, projects]);
 
   return (
     <section id="projects" className="relative w-full py-24 md:py-32">
@@ -61,7 +79,8 @@ const ProjectsGallery = () => {
               variant="outline"
               size="icon"
               onClick={() => carouselApi?.scrollPrev()}
-              className="h-11 w-11 rounded-full border-primary/20 hover:bg-primary/5 hover:border-primary/30"
+              className="h-11 w-11 rounded-full border-primary/20 hover:bg-primary/5 hover:border-primary/30 disabled:opacity-50 disabled:cursor-not-allowed"
+              disabled={!canScrollPrev}
             >
               <ArrowLeft className="h-5 w-5" />
             </Button>
@@ -69,7 +88,8 @@ const ProjectsGallery = () => {
               variant="outline"
               size="icon"
               onClick={() => carouselApi?.scrollNext()}
-              className="h-11 w-11 rounded-full border-primary/20 hover:bg-primary/5 hover:border-primary/30"
+              className="h-11 w-11 rounded-full border-primary/20 hover:bg-primary/5 hover:border-primary/30 disabled:opacity-50 disabled:cursor-not-allowed"
+              disabled={!canScrollNext}
             >
               <ArrowRight className="h-5 w-5" />
             </Button>
@@ -152,20 +172,22 @@ const ProjectsGallery = () => {
           </CarouselContent>
         </Carousel>
 
-        <div className="mt-12 flex justify-center gap-3">
-          {projects.map((_, index) => (
-            <button
-              key={index}
-              className={`h-2.5 transition-all duration-300 ${
-                currentSlide === index
-                  ? "w-8 bg-primary rounded-full"
-                  : "w-2.5 bg-primary/20 rounded-full hover:bg-primary/40"
-              }`}
-              onClick={() => carouselApi?.scrollTo(index)}
-              aria-label={`Go to slide ${index + 1}`}
-            />
-          ))}
-        </div>
+        {(canScrollPrev || canScrollNext) && (
+          <div className="mt-12 flex justify-center gap-3">
+            {projects.map((_, index) => (
+              <button
+                key={index}
+                className={`h-2.5 transition-all duration-300 ${
+                  currentSlide === index
+                    ? "w-8 bg-primary rounded-full"
+                    : "w-2.5 bg-primary/20 rounded-full hover:bg-primary/40"
+                }`}
+                onClick={() => carouselApi?.scrollTo(index)}
+                aria-label={`Go to slide ${index + 1}`}
+              />
+            ))}
+          </div>
+        )}
       </div>
     </section>
   );
