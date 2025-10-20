@@ -5,6 +5,7 @@ type GenerateMetadataProps = {
   description?: string;
   path?: string;
   icon?: string;
+  image?: string;
 };
 
 const BASE_URL = "https://www.woverasolutions.com";
@@ -17,11 +18,10 @@ export function generateMetadata({
   description = "Building technology solutions that matter",
   path = "",
   icon = "/svg/wovera-icon.svg",
+  image = "/images/open-graph.png",
 }: GenerateMetadataProps = {}): Metadata {
   // Ensure path starts with a slash if not empty and doesn't have trailing slash
-  const normalizedPath = path 
-    ? path.startsWith("/") ? path : `/${path}`
-    : "";
+  const normalizedPath = path ? (path.startsWith("/") ? path : `/${path}`) : "";
 
   return {
     title,
@@ -29,6 +29,26 @@ export function generateMetadata({
     metadataBase: new URL(BASE_URL),
     alternates: {
       canonical: normalizedPath || "/",
+    },
+    openGraph: {
+      type: "website",
+      url: normalizedPath || "/",
+      siteName: "Wovera Solutions PLC",
+      title,
+      description,
+      images: [
+        {
+          url: image,
+          alt: "Wovera Solutions PLC — We make products that just work",
+        },
+      ],
+      locale: "en_US",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [image],
     },
     icons: {
       icon: [
@@ -39,4 +59,4 @@ export function generateMetadata({
       apple: "/svg/wovera-icon.svg",
     },
   };
-} 
+}
