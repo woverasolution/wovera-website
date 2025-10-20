@@ -28,6 +28,20 @@ const companies = [
     name: "DDLMB",
     logo: "/logos/dire-logo.png",
   },
+  {
+    name: "Grand Palace Hotel",
+    logo: "/logos/grand-palace-logo.png", 
+  },
+  {
+    name: "Radiant Health Club",
+    logo: "/logos/radiant-logo.webp",
+  },
+  {
+    name: "Hey Trading PLC",
+    logo: "/logos/hey-logo.png",
+  },
+  
+  
 
   // Add more companies as needed
 ];
