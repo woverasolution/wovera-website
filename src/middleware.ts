@@ -31,6 +31,6 @@ export function middleware(request: NextRequest) {
 // Run on all routes except static assets and verification files
 export const config = {
   matcher: [
-    "/((?!_next/static|_next/image|favicon.ico|robots.txt|sitemap|og.html|google.*\\.html|.*\\.(png|jpg|jpeg|webp|svg|gif|ico)).*)",
+    "/((?!_next/static|_next/image|favicon.ico|robots.txt|sitemap.xml|og.html|google.*\\.html).*)",
   ],
 };
