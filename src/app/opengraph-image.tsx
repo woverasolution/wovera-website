@@ -18,53 +18,22 @@ export default async function Image() {
 
   return new ImageResponse(
     (
-      <div
-        style={{
-          width: "100%",
-          height: "100%",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          background: "linear-gradient(135deg, #0f172a 0%, #020617 100%)",
-          color: "white",
-          position: "relative",
-          fontFamily: "Inter, ui-sans-serif, system-ui, -apple-system",
-        }}
-      >
-        <div
-          style={{
-            position: "absolute",
-            top: 64,
-            left: 64,
-            display: "flex",
-            alignItems: "center",
-            gap: 16,
-          }}
-        >
+      <div tw="w-full h-full flex items-center justify-center bg-gradient-to-br from-slate-900 to-black text-white relative font-sans">
+        <div tw="absolute top-16 left-16 flex items-center gap-4">
           <img src={logoSrc} width={72} height={72} alt="Wovera logo" />
-          <div style={{ fontSize: 40, fontWeight: 700 }}>
-            Wovera Solutions PLC
-          </div>
+          <div tw="font-bold text-[40px]">Wovera Solutions PLC</div>
         </div>
 
-        <div style={{ textAlign: "center" }}>
-          <div style={{ fontSize: 64, fontWeight: 800, letterSpacing: -1 }}>
+        <div tw="flex flex-col items-center text-center">
+          <div tw="text-[64px] font-extrabold tracking-tight">
             We make products that just work
           </div>
-          <div style={{ marginTop: 16, fontSize: 28, opacity: 0.9 }}>
+          <div tw="mt-4 text-[28px] opacity-90">
             Software Engineering • AI • Cloud • GIS
           </div>
         </div>
 
-        <div
-          style={{
-            position: "absolute",
-            bottom: 48,
-            right: 64,
-            fontSize: 24,
-            opacity: 0.9,
-          }}
-        >
+        <div tw="absolute bottom-12 right-16 text-[24px] opacity-90">
           www.woverasolutions.com
         </div>
       </div>
