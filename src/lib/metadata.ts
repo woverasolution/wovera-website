@@ -15,30 +15,35 @@ const BASE_URL = "https://www.woverasolutions.com";
  */
 export function generateMetadata({
   title = "Wovera Solutions PLC",
-  description = "Building technology solutions that matter",
+  description = "We make products that just work",
   path = "",
   icon = "/svg/wovera-icon.svg",
   image = "/images/open-graph.png",
 }: GenerateMetadataProps = {}): Metadata {
   // Ensure path starts with a slash if not empty and doesn't have trailing slash
   const normalizedPath = path ? (path.startsWith("/") ? path : `/${path}`) : "";
+  const absoluteCanonical = `${BASE_URL}${normalizedPath || "/"}`;
+  const absoluteOgImage = image.startsWith("http")
+    ? image
+    : `${BASE_URL}${image}`;
+  const absoluteIcon = icon.startsWith("http") ? icon : `${BASE_URL}${icon}`;
 
   return {
     title,
     description,
     metadataBase: new URL(BASE_URL),
     alternates: {
-      canonical: normalizedPath || "/",
+      canonical: absoluteCanonical,
     },
     openGraph: {
       type: "website",
-      url: normalizedPath || "/",
+      url: absoluteCanonical,
       siteName: "Wovera Solutions PLC",
       title,
       description,
       images: [
         {
-          url: image,
+          url: absoluteOgImage,
           alt: "Wovera Solutions PLC — We make products that just work",
         },
       ],
@@ -48,15 +53,19 @@ export function generateMetadata({
       card: "summary_large_image",
       title,
       description,
-      images: [image],
+      images: [absoluteOgImage],
     },
     icons: {
       icon: [
-        { url: icon },
-        { url: "/wovera-icon.ico", type: "image/x-icon", sizes: "any" },
-        { url: "/svg/wovera-icon.svg", type: "image/svg+xml" },
+        { url: absoluteIcon },
+        {
+          url: `${BASE_URL}/wovera-icon.ico`,
+          type: "image/x-icon",
+          sizes: "any",
+        },
+        { url: `${BASE_URL}/svg/wovera-icon.svg`, type: "image/svg+xml" },
       ],
-      apple: "/svg/wovera-icon.svg",
+      apple: `${BASE_URL}/svg/wovera-icon.svg`,
     },
   };
 }
